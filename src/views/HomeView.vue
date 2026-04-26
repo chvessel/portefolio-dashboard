@@ -35,9 +35,24 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
         <div class="projects">
           <h3 class="projects__title">Featured Projects</h3>
           <div class="projects__grid">
-            <ProjectCard image="/images/project_one.jpg" />
-            <ProjectCard image="/images/project_two.jpg"/>
-            <ProjectCard image="/images/project_three.jpg"/>
+
+            <ProjectCard 
+             title="Finance overview"
+              description="A comprehensive financial overview featuring real-time data visualization, 
+              expense tracking, and interactive charts to monitor personal or business wealth."
+              image="/images/project_one.jpg" />
+
+            <ProjectCard
+            title="AI chatbot"
+            description="An intelligent conversational interface built with natural language 
+            processing to provide instant customer support and automated task handling." 
+              image="/images/project_two.jpg"/>
+
+            <ProjectCard 
+            title="Bakery insight viewboard"
+              description="A specialized analytics platform for bakeries, tracking daily sales trends, 
+              inventory levels, and production efficiency in a clean, visual layout."
+              image="/images/project_three.jpg"/>
           </div>
         </div>
 
@@ -65,13 +80,13 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
 </template>
 
 <style lang="scss" scoped>
-$color-bg: #0d0d0d;
+$color-bg: #0a0a0a;
 $color-primary: #f9c909;
 $color-text-muted: #818181;
 
 .portfolio {
   background-color: $color-bg;
-  min-height: 100vh;
+  min-height: 70vh;
   color: white;
 
   &__container {
@@ -83,7 +98,7 @@ $color-text-muted: #818181;
 
 .hero {
   padding: 0 4rem 0 4rem;
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
 
@@ -119,12 +134,6 @@ $color-text-muted: #818181;
     max-width: 500px;
   }
 
-  &__visual {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-
   &__figure {
     position: relative;
     border-radius: 50px;
@@ -146,8 +155,15 @@ $color-text-muted: #818181;
     height: 100%;
     pointer-events: none;
     background: 
-      linear-gradient(to bottom, $color-bg 0%, transparent 15%, transparent 85%, $color-bg 100%),
-      linear-gradient(to right, $color-bg 0%, transparent 35%);
+      linear-gradient(to bottom, 
+      $color-bg 0%, 
+      transparent 15%, 
+      transparent 85%, 
+      $color-bg 100%),
+      
+      linear-gradient(to right, 
+      $color-bg 0%, 
+      transparent 35%);
   }
 }
 

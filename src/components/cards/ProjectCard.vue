@@ -19,7 +19,7 @@ defineProps({
       <p class="card__description">{{ description }}</p>
       
       <div class="card__footer">
-        <a :href="link" class="card__link">View More</a>
+        <a :href="link" class="card__link">View more</a>
       </div>
     </div>
   </div>
@@ -35,8 +35,7 @@ defineProps({
   flex: 1; 
   transition: transform 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.05); 
-  height: 15rem;
-  width: 15rem;
+  min-height: 100%;
   font-family: sans-serif;
 
   &:hover {
@@ -60,44 +59,42 @@ defineProps({
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 100%;
     background: linear-gradient(to top, #161616, transparent);
   }
 
   &__content {
-    padding: 1.5rem;
+    padding: 1.2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    flex-grow: 1;
   }
 
   &__title {
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 0;
+    margin-bottom: 0.5rem;
   }
 
   &__description {
     color: #818181;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   &__footer {
     margin-top: auto; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   padding-top: 1rem;
   }
 
   &__link {
-    color: #f9c909; 
+    color: $color-primary; 
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: normal;
     letter-spacing: 1px;
 
     &:hover {
