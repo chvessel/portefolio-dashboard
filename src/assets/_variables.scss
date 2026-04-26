@@ -1,0 +1,36 @@
+// Colors
+$color-bg: #0d0d0d;
+$color-primary: #f9c909; 
+$color-white: #ffffff;
+$color-text-muted: #818181;
+$color-card-bg: #161616;
+$color-border: rgba(255, 255, 255, 0.05);
+
+// Typography
+$font-main: sans-serif; 
+$font-weight-thin: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 0.5rem;  // 8px
+$spacing-sm: 1rem;    // 16px
+$spacing-md: 2rem;    // 32px
+$spacing-lg: 4rem;    // 64px
+$spacing-xl: 6rem;    // 96px
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-full: 50px; 
+
+// Breakpoints (Til mobil-tilpasning)
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1200px;
+
+// Transitions
+$transition-base: all 0.3s ease;
