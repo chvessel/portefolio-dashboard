@@ -1,15 +1,31 @@
 <script setup>
+import { computed } from 'vue';
 
+const props = defineProps({
+  href: { type: String, default: null },
+  download: { type: [Boolean, String], default: false },
+  target: { type: String, default: null },
+});
+
+const tag = computed(() => (props.href ? 'a' : 'button'));
 </script>
 
 <template>
-  <button class="action">
+  <component
+    :is="tag"
+    class="action"
+    :href="href || undefined"
+    :download="href && download ? download : undefined"
+    :target="target || undefined"
+    :rel="target === '_blank' ? 'noopener noreferrer' : undefined"
+  >
     <slot></slot>
-  </button>
+  </component>
 </template>
 
 <style lang="scss" scoped>
 .action {
+    display: inline-block;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -17,6 +33,8 @@
     background-color: rgb(249, 201, 9);
     font-weight: 600;
     font-size: 18px;
+    text-decoration: none;
+    color: inherit;
     transition: transform 0.2s;
 
     &:hover {

@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Forside",
+    "portfolio": "Portfolio"
+  },
+  "language": {
+    "label": "Sprog"
+  },
+  "logo": {
+    "aria": "CHV — gå til forsiden"
+  },
+  "hero": {
+    "greeting": "Hej, jeg er Carina",
+    "role": "Frontend-udvikler",
+    "intro": "Her kan du kigge dig omkring og læse om det arbejde, jeg har lavet. Som frontend-udvikler lever og ånder jeg for UX/UI og brugeroplevelse. Jeg har gjort det til min mission at gøre det så nemt og intuitivt som muligt for brugeren at navigere rundt på platforme.",
+    "readMore": "Læs mere",
+    "downloadCv": "Hent CV"
+  },
+  "home": {
+    "featuredTitle": "Udvalgte projekter",
+    "aboutTitle": "Om mig",
+    "aboutText": "Frontend-udvikler med speciale i UX/UI. Jeg brænder for at skabe gnidningsfrie digitale grænseflader, hvor funktionalitet møder fejlfrit design. Mit mål er enkelt: at gøre det komplekse ubesværet.",
+    "contactTitle": "Kontakt mig",
+    "contactCta": "Kontakt mig",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefon"
+  },
+  "portfolio": {
+    "titleMain": "Mit",
+    "titleAlt": "arbejde",
+    "description": "En samling af projekter, hvor jeg har kombineret design og kode.",
+    "viewMore": "Se mere",
+    "techLabel": "Teknologier",
+    "considerationsLabel": "Overvejelser"
+  },
+  "projects": {
+    "datanest": {
+      "title": "DataNest — AI-marketingassistent",
+      "description": "Et AI-drevet analyseværktøj til marketingteams — stil spørgsmål i almindeligt sprog, følg konverteringer på tværs af kanaler, og fang ugyldig trafik og VPN-proxyer, før de skævvrider tallene.",
+      "considerations": "Jeg ville have AI-samtalen til at føles som produktets omdrejningspunkt uden at gemme de underliggende data væk, så nøgletallene altid er ét klik væk i en fast sidebar frem for begravet i en separat visning."
+    },
+    "finance": {
+      "title": "Finansielt overblik",
+      "description": "Et samlet finansielt overblik med visualisering af data i realtid, udgiftssporing og interaktive grafer til at følge privat- eller virksomhedsøkonomi.",
+      "considerations": "Den største udfordring var at få mange tal på skærmen uden at overvælde brugeren, så jeg valgte grafer frem for tabeller, hver gang en tendens betød mere end et præcist tal."
+    },
+    "chatbot": {
+      "title": "AI-chatbot",
+      "description": "En intelligent samtalegrænseflade bygget med sprogforståelse (NLP), der giver øjeblikkelig kundesupport og automatiserer opgaver.",
+      "considerations": "Jeg fokuserede på tydelige indlæsnings- og 'skriver'-tilstande, så ventetiden på et AI-svar aldrig føles som om grænsefladen er gået i stå."
+    },
+    "bakery": {
+      "title": "Bageri-indsigtstavle",
+      "description": "En specialiseret analyseplatform til bagerier, der følger daglige salgstendenser, lagerbeholdning og produktionseffektivitet i et rent, visuelt layout.",
+      "considerations": "Dashboardet skulle kunne bruges af personalet i bageriet og ikke kun af kontoret, så jeg prioriterede store, letaflæselige tal frem for tætte tabeller."
+    },
+    "ecommerce": {
+      "title": "E-handelsapp",
+      "description": "En fuld shoppingoplevelse med sikker checkout, produktgennemsyn og ordresporing bygget til en glidende vej fra browsing til køb.",
+      "considerations": "Jeg holdt checkout-flowet til så få trin som muligt, da hvert ekstra felt eller side er et sted, en kunde kan falde fra."
+    }
+  }
+}

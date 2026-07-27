@@ -1,24 +1,33 @@
 <script setup>
+import { useI18n } from 'vue-i18n';
 import ActionButton from '@/components/buttons/ActionButton.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
-import ContactForm from '@/components/forms/ContactForm.vue';
+import { projects } from '@/data/projects';
+
+const { t } = useI18n();
+
+const contactEmail = 'carina@haubro.me';
+const contactPhone = '+45 42 74 29 14';
+const contactPhoneHref = 'tel:+4542742914';
+
+const featuredIds = ['finance', 'chatbot', 'bakery'];
+const featuredProjects = projects.filter((p) => featuredIds.includes(p.id));
 </script>
 
 <template>
   <main class="portfolio">
-    
+
     <section class="hero">
       <div class="hero__container">
         <div class="hero__content">
-          <h1 class="hero__title">Hi, i'm Carina</h1>
-          <h2 class="hero__subtitle">Frontend Developer</h2>
-          <p class="hero__text">
-            Here you can look around and read about my work i've made. 
-            As a frontend developer, I live and breathe for UX/UI and user experience. 
-            I made it my mission to make navigating platforms as effortless and intuitive as possible for the user.
-          </p>
+          <h1 class="hero__title">{{ t('hero.greeting') }}</h1>
+          <h2 class="hero__subtitle">{{ t('hero.role') }}</h2>
+          <p class="hero__text">{{ t('hero.intro') }}</p>
           <div class="hero__actions">
-            <ActionButton>Read more</ActionButton>
+            <ActionButton>{{ t('hero.readMore') }}</ActionButton>
+            <ActionButton href="/cv/Carina-Vessel-CV.pdf" download class="hero__cv-btn">
+              {{ t('hero.downloadCv') }}
+            </ActionButton>
           </div>
         </div>
 
@@ -33,46 +42,44 @@ import ContactForm from '@/components/forms/ContactForm.vue';
 
     <section class="portfolio__main">
       <div class="portfolio__container">
-        
+
         <div class="projects">
-          <h3 class="projects__title">Featured projects</h3>
+          <h3 class="projects__title">{{ t('home.featuredTitle') }}</h3>
           <div class="projects__grid">
-
-            <ProjectCard 
-             title="Finance overview"
-              description="A comprehensive financial overview featuring real-time data visualization, 
-              expense tracking, and interactive charts to monitor personal or business wealth."
-              image="/images/project_one.jpg" />
-
             <ProjectCard
-            title="AI chatbot"
-            description="An intelligent conversational interface built with natural language 
-            processing to provide instant customer support and automated task handling." 
-              image="/images/project_two.jpg"/>
-
-            <ProjectCard 
-            title="Bakery insight viewboard"
-              description="A specialized analytics platform for bakeries, tracking daily sales trends, 
-              inventory levels, and production efficiency in a clean, visual layout."
-              image="/images/project_three.jpg"/>
+              v-for="project in featuredProjects"
+              :key="project.id"
+              :title="t(`projects.${project.id}.title`)"
+              :description="t(`projects.${project.id}.description`)"
+              :image="project.image"
+              :link="project.link"
+            />
           </div>
         </div>
 
         <aside class="sidebar">
           <div class="sidebar__section">
-            <h3 class="sidebar__title">About me</h3>
-            <p class="sidebar__text">
-              Frontend Developer specializing in UX/UI. 
-              Dedicated to crafting seamless digital interfaces where functionality meets flawless design. 
-              My goal is simple: making the complex feel effortless.
-            </p>
+            <h3 class="sidebar__title">{{ t('home.aboutTitle') }}</h3>
+            <p class="sidebar__text">{{ t('home.aboutText') }}</p>
           </div>
-          
+
           <div class="sidebar__section">
-            <h3 class="sidebar__title">Contact me</h3>
-            <form class="contact-form">
-              <ContactForm />
-            </form>
+            <h3 class="sidebar__title">{{ t('home.contactTitle') }}</h3>
+            <div class="contact-block">
+              <ActionButton :href="`mailto:${contactEmail}`" class="contact-block__cta">
+                {{ t('home.contactCta') }}
+              </ActionButton>
+              <ul class="contact-block__details">
+                <li class="contact-block__row">
+                  <span class="contact-block__label">{{ t('home.emailLabel') }}</span>
+                  <a :href="`mailto:${contactEmail}`" class="contact-block__value">{{ contactEmail }}</a>
+                </li>
+                <li class="contact-block__row">
+                  <span class="contact-block__label">{{ t('home.phoneLabel') }}</span>
+                  <a :href="contactPhoneHref" class="contact-block__value">{{ contactPhone }}</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </aside>
 
@@ -137,16 +144,40 @@ $color-text-muted: #818181;
     max-width: 500px;
   }
 
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__cv-btn {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: rgba(249, 201, 9, 0.08);
+    }
+  }
+
+  &__visual {
+    flex: 1.3;
+  }
+
   &__figure {
     position: relative;
     border-radius: 50px;
     overflow: hidden;
-    max-width: 600px;
+    max-width: 640px;
+    aspect-ratio: 16 / 10;
     margin: 0;
   }
 
   &__img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
     display: block;
   }
 
@@ -157,15 +188,15 @@ $color-text-muted: #818181;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background: 
-      linear-gradient(to bottom, 
-      $color-bg 0%, 
-      transparent 15%, 
-      transparent 85%, 
+    background:
+      linear-gradient(to bottom,
+      $color-bg 0%,
+      transparent 15%,
+      transparent 85%,
       $color-bg 100%),
-      
-      linear-gradient(to right, 
-      $color-bg 0%, 
+
+      linear-gradient(to right,
+      $color-bg 0%,
       transparent 35%);
   }
 }
@@ -203,19 +234,44 @@ $color-text-muted: #818181;
   }
 }
 
-.contact-form {
-  &__placeholder {
-    border: 1px dashed #333;
-    padding: 2rem;
-    text-align: center;
-    color: #444;
-    border-radius: 12px;
+.contact-block {
+  &__cta {
+    margin-bottom: 1.5rem;
+  }
+
+  &__details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__label {
+    color: $color-primary;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__value {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 @media (max-width: 1024px) {
-  .hero__container, 
-  .portfolio__container, 
+  .hero__container,
+  .portfolio__container,
   .projects__grid {
     flex-direction: column;
   }

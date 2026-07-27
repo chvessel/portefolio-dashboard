@@ -1,17 +1,25 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import SiteLogo from '@/components/nav/SiteLogo.vue'
+import LanguageSwitch from '@/components/nav/LanguageSwitch.vue'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <header class="header">
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><RouterLink to="/" class="nav__link">Home</RouterLink></li>
-        <li class="nav__item"><RouterLink to="/about" class="nav__link">About</RouterLink></li>
-        <li class="nav__item"><RouterLink to="/portfolio" class="nav__link">Portfolio</RouterLink></li>
-        <li class="nav__item"><RouterLink to="/contact" class="nav__link">Contact</RouterLink></li>
-      </ul>
-    </nav>
+    <div class="header__row">
+      <SiteLogo />
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><RouterLink to="/" class="nav__link">{{ t('nav.home') }}</RouterLink></li>
+          <li class="nav__item"><RouterLink to="/portfolio" class="nav__link">{{ t('nav.portfolio') }}</RouterLink></li>
+        </ul>
+        <LanguageSwitch />
+      </nav>
+    </div>
   </header>
 
   <RouterView />
@@ -27,18 +35,25 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 
 body {
-  background-color: #0a0a0a; 
+  background-color: #0a0a0a;
   margin: 0;
 }
 
 .header {
-  padding: 20px 5px; 
+  padding: 20px 5px;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+  }
 }
 .nav {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 3rem;
-  padding:20px 20px ;
+  align-items: center;
+  gap: 3rem;
+  padding: 20px 20px;
   font-family: sans-serif;
   letter-spacing: 3px;
   &__list {
@@ -49,7 +64,19 @@ body {
   &__link {
     color: rgb(125, 125, 125);
     text-decoration: none;
-    &.router-link-active { color: #f9c909; } 
+    &.router-link-active { color: #f9c909; }
+  }
+}
+
+@media (max-width: 768px) {
+  .header__row {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+  .nav {
+    padding: 0;
+    gap: 1.5rem;
   }
 }
 </style>

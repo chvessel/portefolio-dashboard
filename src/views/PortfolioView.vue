@@ -1,40 +1,30 @@
 <script setup>
+import { useI18n } from 'vue-i18n';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
+import { projects } from '@/data/projects';
+
+const { t } = useI18n();
 </script>
 
 <template>
   <main class="portfolio-page">
     <header class="portfolio-page__header">
-      <h1 class="portfolio-page__title">My <span class="portfolio-page__title--alt">work</span></h1>
-      <p class="portfolio-page__description">A collection of projects where I've combined design and code.</p>
+      <h1 class="portfolio-page__title">
+        {{ t('portfolio.titleMain') }} <span class="portfolio-page__title--alt">{{ t('portfolio.titleAlt') }}</span>
+      </h1>
+      <p class="portfolio-page__description">{{ t('portfolio.description') }}</p>
     </header>
 
     <div class="portfolio-page__grid">
       <ProjectCard
-        title="DataNest — AI Marketing Assistant"
-        description="AI-powered analytics workspace for marketing teams to track conversions and catch invalid traffic."
-        image="/images/datanest-preview.svg"
-        link="/portfolio/datanest"
-      />
-      <ProjectCard
-        title="Finance Dashboard"
-        description="Comprehensive financial overview featuring real-time data visualization."
-        image="/images/project_one.jpg"
-      />
-      <ProjectCard 
-        title="AI Chatbot" 
-        description="Intelligent conversational interface built with natural language processing."
-        image="/images/project_two.jpg"
-      />
-      <ProjectCard 
-        title="Bakery Insight" 
-        description="Specialized analytics platform for tracking bakery production."
-        image="/images/project_three.jpg"
-      />
-      <ProjectCard 
-        title="E-commerce App" 
-        description="Full-stack shopping experience with secure checkout."
-        image="/images/project1.jpg"
+        v-for="project in projects"
+        :key="project.id"
+        :title="t(`projects.${project.id}.title`)"
+        :description="t(`projects.${project.id}.description`)"
+        :considerations="t(`projects.${project.id}.considerations`)"
+        :technologies="project.technologies"
+        :image="project.image"
+        :link="project.link"
       />
     </div>
   </main>
@@ -56,9 +46,9 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
     &--alt { color: #f9c909; }
   }
 
-  &__description { 
-    color: #818181; 
-    margin-top: 1rem; 
+  &__description {
+    color: #818181;
+    margin-top: 1rem;
   }
 
   &__grid {
