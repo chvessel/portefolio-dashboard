@@ -19,8 +19,8 @@ const { t } = useI18n();
 
 .logo__mark {
   display: block;
-  width: 56px;
-  height: 56px;
+  width: 6.5rem;
+  height: 6.5rem;
   transition: $transition-base;
 
   .logo:hover & {
@@ -30,8 +30,8 @@ const { t } = useI18n();
 
 @media (max-width: 768px) {
   .logo__mark {
-    width: 44px;
-    height: 44px;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 }
 </style>

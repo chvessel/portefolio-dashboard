@@ -64,7 +64,7 @@ defineProps({
 
   &__image-container {
     position: relative;
-    height: 180px;
+    height: 11.25rem;
     overflow: hidden;
   }
 

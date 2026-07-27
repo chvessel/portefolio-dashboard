@@ -91,8 +91,8 @@ const alerts = computed(() =>
         <span class="datanest-page__tag">Product &amp; UI Design</span>
         <span class="datanest-page__tag">React</span>
         <span class="datanest-page__tag">Next.js</span>
-        <span class="datanest-page__tag">OpenAI API</span>
-        <span class="datanest-page__tag">Tailwind CSS</span>
+        <span class="datanest-page__tag">Node.js</span>
+        <span class="datanest-page__tag">REST API</span>
       </div>
     </header>
 

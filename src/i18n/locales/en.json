@@ -42,24 +42,29 @@
       "considerations": "I wanted the AI conversation to feel like the centerpiece of the product without hiding the underlying data, so the metrics stay one click away in a persistent sidebar instead of being buried in a separate view."
     },
     "finance": {
-      "title": "Finance overview",
-      "description": "A comprehensive financial overview featuring real-time data visualization, expense tracking, and interactive charts to monitor personal or business wealth.",
+      "title": "Finance dashboard",
+      "description": "A comprehensive financial dashboard featuring real-time data visualization, expense tracking, and interactive charts to monitor personal or business wealth.",
       "considerations": "The biggest challenge was fitting a lot of numbers on screen without overwhelming the user, so I leaned on charts over tables wherever a trend mattered more than an exact figure."
     },
     "chatbot": {
-      "title": "AI chatbot",
-      "description": "An intelligent conversational interface built with natural language processing to provide instant customer support and automated task handling.",
+      "title": "AI Assistant / LLM",
+      "description": "An LLM-powered assistant that understands natural language requests and gives users instant answers, support, and automated task handling without digging through menus.",
       "considerations": "I focused on designing clear loading and typing states so the wait for an AI response never feels like the interface has stalled."
     },
-    "bakery": {
-      "title": "Bakery insight viewboard",
-      "description": "A specialized analytics platform for bakeries, tracking daily sales trends, inventory levels, and production efficiency in a clean, visual layout.",
-      "considerations": "The dashboard had to be usable by staff on the bakery floor, not just office admin, so I prioritized large, glanceable numbers over dense tables."
+    "streaming": {
+      "title": "Streaming services overview",
+      "description": "A dashboard that gathers your subscriptions, watch history, and spending across streaming services in one overview, so you can see at a glance what you're actually using.",
+      "considerations": "The hardest part was making subscriptions you rarely think about feel worth checking in on, so I leaned on simple monthly-cost and usage comparisons rather than raw historical data."
     },
     "ecommerce": {
-      "title": "E-commerce App",
-      "description": "A full-stack shopping experience with secure checkout, product browsing, and order tracking built for a smooth path from browsing to purchase.",
-      "considerations": "I kept the checkout flow to as few steps as possible, since every extra field or page is a place a customer can drop off."
+      "title": "Book Store — Print, Audio & E-books",
+      "description": "An online bookstore where customers can browse and buy physical books, audiobooks, and e-books from a single shelf, with format-specific previews and checkout flows for each type.",
+      "considerations": "Physical, audio, and digital books each need a different kind of product page — a sample chapter, an audio preview, a shipping estimate — so I planned the layout to adapt per format instead of forcing everything into one generic template."
+    },
+    "personal": {
+      "title": "Personal dashboard",
+      "description": "A personal command center for tracking daily habits, goals, and schedule in one place, pulling together the small metrics that are easy to lose track of individually.",
+      "considerations": "Since it's a dashboard for one person rather than a team, I prioritized quick daily glances and light personalization over dense reporting."
     }
   }
 }

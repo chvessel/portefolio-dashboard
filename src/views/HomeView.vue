@@ -12,7 +12,7 @@ const contactEmail = 'carina@haubro.me';
 const contactPhone = '+45 42 74 29 14';
 const contactPhoneHref = 'tel:+4542742914';
 
-const featuredIds = ['finance', 'chatbot', 'bakery'];
+const featuredIds = ['finance', 'chatbot', 'streaming'];
 const featuredProjects = projects.filter((p) => featuredIds.includes(p.id));
 
 const isContactModalOpen = ref(false);
@@ -122,7 +122,7 @@ const isContactModalOpen = ref(false);
 
   &__title {
     margin-top: 0;
-    font-size: clamp(32px, 5vw, 60px);
+    font-size: clamp(2rem, 5vw, 3.75rem);
     font-weight: 600;
     margin-bottom: 1rem;
   }
@@ -165,7 +165,7 @@ const isContactModalOpen = ref(false);
     border-radius: 50px;
     overflow: hidden;
     max-width: 860px;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 767 / 720;
     margin: 0 0 0 auto;
   }
 
@@ -173,7 +173,7 @@ const isContactModalOpen = ref(false);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left center;
+    object-position: left top;
     display: block;
   }
 

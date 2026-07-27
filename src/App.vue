@@ -27,6 +27,10 @@ const { t } = useI18n()
 
 
 <style lang="scss">
+html {
+  font-size: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +44,7 @@ body {
 }
 
 .header {
-  padding: 20px 5px;
+  padding: 1.25rem 0.3rem;
 
   &__row {
     display: flex;
@@ -53,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   gap: 3rem;
-  padding: 20px 20px;
+  padding: 1.25rem;
   font-family: sans-serif;
   letter-spacing: 3px;
   &__list {

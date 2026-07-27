@@ -42,24 +42,29 @@
       "considerations": "Jeg ville have AI-samtalen til at føles som produktets omdrejningspunkt uden at gemme de underliggende data væk, så nøgletallene altid er ét klik væk i en fast sidebar frem for begravet i en separat visning."
     },
     "finance": {
-      "title": "Finansielt overblik",
-      "description": "Et samlet finansielt overblik med visualisering af data i realtid, udgiftssporing og interaktive grafer til at følge privat- eller virksomhedsøkonomi.",
+      "title": "Finansielt dashboard",
+      "description": "Et samlet finansielt dashboard med visualisering af data i realtid, udgiftssporing og interaktive grafer til at følge privat- eller virksomhedsøkonomi.",
       "considerations": "Den største udfordring var at få mange tal på skærmen uden at overvælde brugeren, så jeg valgte grafer frem for tabeller, hver gang en tendens betød mere end et præcist tal."
     },
     "chatbot": {
-      "title": "AI-chatbot",
-      "description": "En intelligent samtalegrænseflade bygget med sprogforståelse (NLP), der giver øjeblikkelig kundesupport og automatiserer opgaver.",
+      "title": "AI-assistent / LLM",
+      "description": "En LLM-drevet assistent, der forstår forespørgsler i almindeligt sprog og giver brugere øjeblikkelige svar, support og automatiserede opgaver uden at grave sig gennem menuer.",
       "considerations": "Jeg fokuserede på tydelige indlæsnings- og 'skriver'-tilstande, så ventetiden på et AI-svar aldrig føles som om grænsefladen er gået i stå."
     },
-    "bakery": {
-      "title": "Bageri-indsigtstavle",
-      "description": "En specialiseret analyseplatform til bagerier, der følger daglige salgstendenser, lagerbeholdning og produktionseffektivitet i et rent, visuelt layout.",
-      "considerations": "Dashboardet skulle kunne bruges af personalet i bageriet og ikke kun af kontoret, så jeg prioriterede store, letaflæselige tal frem for tætte tabeller."
+    "streaming": {
+      "title": "Overblik over streamingtjenester",
+      "description": "Et dashboard, der samler dine abonnementer, seerhistorik og forbrug på tværs af streamingtjenester i ét overblik, så du hurtigt kan se, hvad du faktisk bruger.",
+      "considerations": "Den sværeste del var at gøre abonnementer, man sjældent tænker over, værd at tjekke ind på, så jeg valgte simple sammenligninger af månedspris og forbrug frem for rå historik."
     },
     "ecommerce": {
-      "title": "E-handelsapp",
-      "description": "En fuld shoppingoplevelse med sikker checkout, produktgennemsyn og ordresporing bygget til en glidende vej fra browsing til køb.",
-      "considerations": "Jeg holdt checkout-flowet til så få trin som muligt, da hvert ekstra felt eller side er et sted, en kunde kan falde fra."
+      "title": "Boghandel — fysiske bøger, lydbøger & e-bøger",
+      "description": "En online boghandel, hvor kunder kan browse og købe fysiske bøger, lydbøger og e-bøger fra samme hylde, med formatspecifikke previews og checkout-flows for hver type.",
+      "considerations": "Fysiske bøger, lydbøger og e-bøger kræver hver deres slags produktside — en smagsprøve på et kapitel, en lydprøve, et leveringsestimat — så jeg planlagde layoutet til at tilpasse sig per format i stedet for at proppe alt ind i én generisk skabelon."
+    },
+    "personal": {
+      "title": "Personligt dashboard",
+      "description": "Et personligt kommandocenter til at følge daglige vaner, mål og kalender ét sted, der samler de små målinger, det ellers er nemt at miste overblikket over hver for sig.",
+      "considerations": "Da det er et dashboard til én person frem for et team, prioriterede jeg hurtige daglige overblik og let personalisering frem for tunge rapporter."
     }
   }
 }
