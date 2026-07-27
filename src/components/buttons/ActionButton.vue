@@ -30,7 +30,7 @@ const tag = computed(() => (props.href ? 'a' : 'button'));
     cursor: pointer;
     border-radius: 5px;
     padding: 10px 30px;
-    background-color: rgb(249, 201, 9);
+    background-color: $color-primary;
     font-weight: 600;
     font-size: 18px;
     text-decoration: none;

@@ -7,11 +7,7 @@ const { t } = useI18n();
 
 <template>
   <RouterLink to="/" class="logo" :aria-label="t('logo.aria')">
-    <span class="logo__mark">
-      <span class="logo__letter logo__letter--v">V</span>
-      <span class="logo__letter logo__letter--c">C</span>
-      <span class="logo__letter logo__letter--h">H</span>
-    </span>
+    <span class="logo__mark">C<span class="logo__accent">H</span>V</span>
   </RouterLink>
 </template>
 
@@ -22,49 +18,27 @@ const { t } = useI18n();
 }
 
 .logo__mark {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  flex-shrink: 0;
+  font-family: $font-main;
+  font-size: 34px;
+  font-weight: $font-weight-thin;
+  letter-spacing: 7px;
+  color: $color-white;
   transition: $transition-base;
 
   .logo:hover & {
-    border-color: rgba(249, 201, 9, 0.5);
-    transform: translateY(-1px);
+    letter-spacing: 9px;
   }
 }
 
-.logo__letter {
-  position: absolute;
-  font-weight: 800;
-  font-family: $font-main;
-  line-height: 1;
-  user-select: none;
-}
-
-.logo__letter--v {
-  top: 6px;
-  left: 8px;
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.14);
-  letter-spacing: -1px;
-}
-
-.logo__letter--c {
-  bottom: 5px;
-  left: 6px;
-  font-size: 16px;
-  color: $color-white;
-}
-
-.logo__letter--h {
-  top: 9px;
-  right: 6px;
-  font-size: 18px;
+.logo__accent {
   color: $color-primary;
-  transform: rotate(-6deg);
+  font-weight: $font-weight-medium;
+}
+
+@media (max-width: 768px) {
+  .logo__mark {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
 }
 </style>

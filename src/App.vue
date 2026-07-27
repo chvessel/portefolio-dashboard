@@ -64,7 +64,7 @@ body {
   &__link {
     color: rgb(125, 125, 125);
     text-decoration: none;
-    &.router-link-active { color: #f9c909; }
+    &.router-link-active { color: $color-primary; }
   }
 }
 

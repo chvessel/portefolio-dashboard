@@ -1,7 +1,9 @@
 <script setup>
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ActionButton from '@/components/buttons/ActionButton.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
+import ContactModal from '@/components/modals/ContactModal.vue';
 import { projects } from '@/data/projects';
 
 const { t } = useI18n();
@@ -12,6 +14,8 @@ const contactPhoneHref = 'tel:+4542742914';
 
 const featuredIds = ['finance', 'chatbot', 'bakery'];
 const featuredProjects = projects.filter((p) => featuredIds.includes(p.id));
+
+const isContactModalOpen = ref(false);
 </script>
 
 <template>
@@ -65,35 +69,27 @@ const featuredProjects = projects.filter((p) => featuredIds.includes(p.id));
 
           <div class="sidebar__section">
             <h3 class="sidebar__title">{{ t('home.contactTitle') }}</h3>
-            <div class="contact-block">
-              <ActionButton :href="`mailto:${contactEmail}`" class="contact-block__cta">
-                {{ t('home.contactCta') }}
-              </ActionButton>
-              <ul class="contact-block__details">
-                <li class="contact-block__row">
-                  <span class="contact-block__label">{{ t('home.emailLabel') }}</span>
-                  <a :href="`mailto:${contactEmail}`" class="contact-block__value">{{ contactEmail }}</a>
-                </li>
-                <li class="contact-block__row">
-                  <span class="contact-block__label">{{ t('home.phoneLabel') }}</span>
-                  <a :href="contactPhoneHref" class="contact-block__value">{{ contactPhone }}</a>
-                </li>
-              </ul>
-            </div>
+            <ActionButton class="contact-block__cta" @click="isContactModalOpen = true">
+              {{ t('home.contactCta') }}
+            </ActionButton>
           </div>
         </aside>
 
       </div>
     </section>
 
+    <ContactModal
+      v-if="isContactModalOpen"
+      :email="contactEmail"
+      :phone="contactPhone"
+      :phone-href="contactPhoneHref"
+      @close="isContactModalOpen = false"
+    />
+
   </main>
 </template>
 
 <style lang="scss" scoped>
-$color-bg: #0a0a0a;
-$color-primary: #f9c909;
-$color-text-muted: #818181;
-
 .portfolio {
   background-color: $color-bg;
   min-height: 70vh;
@@ -121,7 +117,7 @@ $color-text-muted: #818181;
   }
 
   &__content {
-    flex: 1;
+    flex: 0.9;
   }
 
   &__title {
@@ -156,21 +152,21 @@ $color-text-muted: #818181;
     color: $color-primary;
 
     &:hover {
-      background-color: rgba(249, 201, 9, 0.08);
+      background-color: rgba($color-primary, 0.08);
     }
   }
 
   &__visual {
-    flex: 1.3;
+    flex: 1.6;
   }
 
   &__figure {
     position: relative;
     border-radius: 50px;
     overflow: hidden;
-    max-width: 640px;
+    max-width: 860px;
     aspect-ratio: 16 / 10;
-    margin: 0;
+    margin: 0 0 0 auto;
   }
 
   &__img {
@@ -197,7 +193,7 @@ $color-text-muted: #818181;
 
       linear-gradient(to right,
       $color-bg 0%,
-      transparent 35%);
+      transparent 25%);
   }
 }
 
@@ -234,41 +230,6 @@ $color-text-muted: #818181;
   }
 }
 
-.contact-block {
-  &__cta {
-    margin-bottom: 1.5rem;
-  }
-
-  &__details {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-
-  &__row {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  &__label {
-    color: $color-primary;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  &__value {
-    color: white;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
 @media (max-width: 1024px) {
   .hero__container,
   .portfolio__container,
@@ -279,6 +240,10 @@ $color-text-muted: #818181;
   .portfolio__container,
   .hero {
     padding: 0;
+  }
+
+  .hero__figure {
+    margin: 0;
   }
 }
 </style>

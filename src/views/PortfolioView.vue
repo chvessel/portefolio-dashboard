@@ -43,7 +43,7 @@ const { t } = useI18n();
 
   &__title {
     font-size: 3.5rem;
-    &--alt { color: #f9c909; }
+    &--alt { color: $color-primary; }
   }
 
   &__description {
