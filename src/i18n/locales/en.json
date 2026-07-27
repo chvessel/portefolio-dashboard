@@ -36,28 +36,28 @@
     "considerationsLabel": "Considerations"
   },
   "projects": {
-    "datanest": {
-      "title": "DataNest — AI Marketing Assistant",
+    "conversion": {
+      "title": "Conversion — AI Marketing Assistant",
       "description": "An AI-powered analytics workspace for marketing teams — ask questions in plain language, track conversions across channels, and catch invalid traffic and VPN proxies before they skew the numbers.",
       "considerations": "I wanted the AI conversation to feel like the centerpiece of the product without hiding the underlying data, so the metrics stay one click away in a persistent sidebar instead of being buried in a separate view."
     },
-    "ledger": {
-      "title": "Ledger — Financial Dashboard",
+    "moneta": {
+      "title": "Moneta — Financial Dashboard",
       "description": "A financial dashboard for contractors that tracks bills, invoices, and cash flow across active jobs — built to surface what needs sign-off or follow-up at a glance.",
       "considerations": "The biggest challenge was fitting a lot of numbers on screen without overwhelming the user, so I leaned on progress rings and charts over tables wherever a trend mattered more than an exact figure."
     },
-    "cortex": {
-      "title": "Cortex — AI Assistant / LLM",
+    "ghost": {
+      "title": "Ghost — AI Assistant / LLM",
       "description": "An LLM-powered assistant that understands natural language requests and gives users instant answers, support, and automated task handling without digging through menus.",
       "considerations": "I focused on designing clear loading and typing states so the wait for an AI response never feels like the interface has stalled."
     },
-    "currents": {
-      "title": "Currents — Streaming Services Overview",
+    "mediadeck": {
+      "title": "MediaDeck — Streaming Services Overview",
       "description": "A dashboard that gathers your subscriptions, watch history, and spending across streaming services in one overview, so you can see at a glance what you're actually using.",
       "considerations": "The hardest part was making subscriptions you rarely think about feel worth checking in on, so I leaned on simple monthly-cost and usage comparisons rather than raw historical data."
     },
-    "folio": {
-      "title": "Folio — Book Store (Print, Audio & E-books)",
+    "spine": {
+      "title": "Spine — Book Store (Print, Audio & E-books)",
       "description": "An online bookstore where customers can browse and buy physical books, audiobooks, and e-books from a single shelf, with format-specific previews and checkout flows for each type.",
       "considerations": "Physical, audio, and digital books each need a different kind of product page — a sample chapter, an audio preview, a shipping estimate — so I planned the layout to adapt per format instead of forcing everything into one generic template."
     },

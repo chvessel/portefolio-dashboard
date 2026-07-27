@@ -81,7 +81,7 @@ const alerts = computed(() =>
         <span class="datanest-page__eyebrow-dot"></span>
         <span>Featured Project</span>
       </div>
-      <h1 class="datanest-page__title">DataNest — AI Marketing Assistant</h1>
+      <h1 class="datanest-page__title">Conversion — AI Marketing Assistant</h1>
       <p class="datanest-page__description">
         An AI-powered analytics workspace for marketing teams — ask questions in plain language,
         track conversions across channels, and catch invalid traffic and VPN proxies before they
@@ -97,7 +97,7 @@ const alerts = computed(() =>
     </header>
 
     <div class="datanest-page__window-wrap">
-      <BrowserWindow :width="1180" :height="800" url="app.datanest.ai/assistant" tab-title="DataNest">
+      <BrowserWindow :width="1180" :height="800" url="app.conversion.io/assistant" tab-title="Conversion">
         <div class="dn">
           <aside class="dn__sidebar">
             <div class="dn__brand">
@@ -109,7 +109,7 @@ const alerts = computed(() =>
                   <path d="M9 19v-6h6v6" />
                 </svg>
               </div>
-              <div class="dn__brand-name">DataNest</div>
+              <div class="dn__brand-name">Conversion</div>
             </div>
 
             <nav class="dn__nav">

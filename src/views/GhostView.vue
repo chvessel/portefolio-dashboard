@@ -49,22 +49,22 @@ const promptItems = [
 ];
 
 const models = [
-  { name: 'Cortex Pro', desc: 'Best for complex, multi-step reasoning', selected: true },
-  { name: 'Cortex Fast', desc: 'Optimized for quick, everyday answers', selected: false },
-  { name: 'Cortex Vision', desc: 'Understands images alongside text', selected: false },
+  { name: 'Ghost Pro', desc: 'Best for complex, multi-step reasoning', selected: true },
+  { name: 'Ghost Fast', desc: 'Optimized for quick, everyday answers', selected: false },
+  { name: 'Ghost Vision', desc: 'Understands images alongside text', selected: false },
 ];
 </script>
 
 <template>
   <ProjectPageHero
     eyebrow="Featured Project"
-    title="Cortex — AI Assistant / LLM"
+    title="Ghost — AI Assistant / LLM"
     description="An LLM-powered assistant that understands natural language requests and gives users instant answers, support, and automated task handling without digging through menus."
     :tags="['Vue3.js', 'Node.js', 'REST API', 'JS']"
     accent="#14b8a6"
     bg="#0a1210"
   >
-    <BrowserWindow :width="1180" :height="800" url="app.cortex.ai/chat" tab-title="Cortex">
+    <BrowserWindow :width="1180" :height="800" url="app.ghost.ai/chat" tab-title="Ghost">
       <div class="cx">
         <aside class="cx__sidebar">
           <div class="cx__brand">
@@ -76,7 +76,7 @@ const models = [
                 <path d="M9 9h2M9 14h2M13 9h2M13 14h2" />
               </svg>
             </div>
-            <div class="cx__brand-name">Cortex</div>
+            <div class="cx__brand-name">Ghost</div>
           </div>
 
           <div class="cx__new-chat">+ New chat</div>
@@ -112,7 +112,7 @@ const models = [
         <main class="cx__main">
           <template v-if="activeScreen === 'chat'">
             <div class="cx__chat-header">
-              <div class="cx__model-pill">Cortex Pro</div>
+              <div class="cx__model-pill">Ghost Pro</div>
               <div class="cx__section-actions">
                 <div class="cx__btn cx__btn--ghost">Share</div>
                 <div class="cx__btn cx__btn--solid">Export</div>
@@ -131,7 +131,7 @@ const models = [
                 v-model="draft"
                 class="cx__composer-input"
                 type="text"
-                placeholder="Ask Cortex anything..."
+                placeholder="Ask Ghost anything..."
               />
               <div class="cx__composer-send">↑</div>
             </div>
@@ -180,7 +180,7 @@ const models = [
             <div class="cx__slider-labels"><span>Precise</span><span>Creative</span></div>
 
             <div class="cx__settings-label">API key</div>
-            <div class="cx__key-field">sk-cortex-••••••••••••3f9a</div>
+            <div class="cx__key-field">sk-ghost-••••••••••••3f9a</div>
           </template>
         </main>
       </div>

@@ -53,13 +53,13 @@ const alertDotStyle = (severity) => {
 <template>
   <ProjectPageHero
     eyebrow="Featured Project"
-    title="Currents — Streaming Services Overview"
+    title="MediaDeck — Streaming Services Overview"
     description="A dashboard that gathers your subscriptions, watch history, and spending across streaming services in one overview, so you can see at a glance what you're actually using."
     :tags="['Vue3.js', 'Node.js', 'SCSS', 'REST API']"
     accent="#db2777"
     bg="#120a10"
   >
-    <BrowserWindow :width="1180" :height="800" url="app.currents.fm/overview" tab-title="Currents">
+    <BrowserWindow :width="1180" :height="800" url="app.mediadeck.tv/overview" tab-title="MediaDeck">
       <div class="ss">
         <aside class="ss__sidebar">
           <div class="ss__brand">
@@ -69,7 +69,7 @@ const alertDotStyle = (severity) => {
                 <path d="M10 8.5l6 3.5-6 3.5z" />
               </svg>
             </div>
-            <div class="ss__brand-name">Currents</div>
+            <div class="ss__brand-name">MediaDeck</div>
           </div>
 
           <nav class="ss__nav">

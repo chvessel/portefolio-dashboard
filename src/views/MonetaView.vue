@@ -49,13 +49,13 @@ const statusStyle = (status) => {
 <template>
   <ProjectPageHero
     eyebrow="Featured Project"
-    title="Ledger — Financial Dashboard"
+    title="Moneta — Financial Dashboard"
     description="A financial dashboard for contractors that tracks bills, invoices, and cash flow across active jobs — built to surface what needs sign-off or follow-up at a glance."
     :tags="['React', 'Node.js', 'REST API', 'SCSS']"
     accent="#84cc16"
     bg="#0c0f0a"
   >
-    <BrowserWindow :width="1180" :height="800" url="app.ledger.build/dashboard" tab-title="Ledger">
+    <BrowserWindow :width="1180" :height="800" url="app.moneta.build/dashboard" tab-title="Moneta">
       <div class="ldg">
         <aside class="ldg__rail">
           <div class="ldg__rail-mark">

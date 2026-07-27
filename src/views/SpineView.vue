@@ -87,13 +87,13 @@ const formatLabels = { physical: 'Physical', audio: 'Audiobook', ebook: 'E-book'
 <template>
   <ProjectPageHero
     eyebrow="Featured Project"
-    title="Folio — Book Store (Print, Audio &amp; E-books)"
+    title="Spine — Book Store (Print, Audio &amp; E-books)"
     description="An online bookstore where customers can browse and buy physical books, audiobooks, and e-books from a single shelf, with format-specific previews and checkout flows for each type."
     :tags="['Nuxt.js', 'Vue3.js', 'SCSS', 'REST API']"
     accent="#2f6f4e"
     bg="#0c1410"
   >
-    <BrowserWindow :width="1180" :height="800" url="folio.shop" tab-title="Folio">
+    <BrowserWindow :width="1180" :height="800" url="spine.shop" tab-title="Spine">
       <div class="fl">
         <header class="fl__topbar">
           <div class="fl__brand" @click="activeScreen = 'browse'">
@@ -104,7 +104,7 @@ const formatLabels = { physical: 'Physical', audio: 'Audiobook', ebook: 'E-book'
                 <rect x="5" y="5" width="14" height="4" rx="1" />
               </svg>
             </div>
-            <div class="fl__brand-name">Folio</div>
+            <div class="fl__brand-name">Spine</div>
           </div>
 
           <div class="fl__search"><div class="fl__search-icon"></div><span>Search titles, authors, genres</span></div>

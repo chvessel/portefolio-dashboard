@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PortfolioView from '@/views/PortfolioView.vue'
-import DataNestView from '@/views/DataNestView.vue'
-import CortexView from '@/views/CortexView.vue'
-import CurrentsView from '@/views/CurrentsView.vue'
-import FolioView from '@/views/FolioView.vue'
-import LedgerView from '@/views/LedgerView.vue'
+import ConversionView from '@/views/ConversionView.vue'
+import GhostView from '@/views/GhostView.vue'
+import MediaDeckView from '@/views/MediaDeckView.vue'
+import SpineView from '@/views/SpineView.vue'
+import MonetaView from '@/views/MonetaView.vue'
 import DayframeView from '@/views/DayframeView.vue'
 
 const router = createRouter({
@@ -22,29 +22,29 @@ const router = createRouter({
       component: PortfolioView,
     },
     {
-      path: '/portfolio/datanest',
-      name: 'datanest',
-      component: DataNestView,
+      path: '/portfolio/conversion',
+      name: 'conversion',
+      component: ConversionView,
     },
     {
-      path: '/portfolio/cortex',
-      name: 'cortex',
-      component: CortexView,
+      path: '/portfolio/ghost',
+      name: 'ghost',
+      component: GhostView,
     },
     {
-      path: '/portfolio/currents',
-      name: 'currents',
-      component: CurrentsView,
+      path: '/portfolio/mediadeck',
+      name: 'mediadeck',
+      component: MediaDeckView,
     },
     {
-      path: '/portfolio/folio',
-      name: 'folio',
-      component: FolioView,
+      path: '/portfolio/spine',
+      name: 'spine',
+      component: SpineView,
     },
     {
-      path: '/portfolio/ledger',
-      name: 'ledger',
-      component: LedgerView,
+      path: '/portfolio/moneta',
+      name: 'moneta',
+      component: MonetaView,
     },
     {
       path: '/portfolio/dayframe',
