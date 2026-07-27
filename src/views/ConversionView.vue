@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import BrowserWindow from '@/components/browser/BrowserWindow.vue';
 
-const activeScreen = ref('assistant');
+const activeScreen = ref('dashboard');
 const goto = (screen) => { activeScreen.value = screen; };
 
 const navStyle = (screen) => {
@@ -81,11 +81,11 @@ const alerts = computed(() =>
         <span class="datanest-page__eyebrow-dot"></span>
         <span>Featured Project</span>
       </div>
-      <h1 class="datanest-page__title">Conversion — AI Marketing Assistant</h1>
+      <h1 class="datanest-page__title">Conversion — Real-Time Marketing Dashboard</h1>
       <p class="datanest-page__description">
-        An AI-powered analytics workspace for marketing teams — ask questions in plain language,
-        track conversions across channels, and catch invalid traffic and VPN proxies before they
-        skew the numbers.
+        A live overview for marketing teams — watch traffic and conversions update in real time,
+        track campaign performance across channels, and catch invalid traffic and VPN proxies
+        before they skew the numbers.
       </p>
       <div class="datanest-page__tags">
         <span class="datanest-page__tag">Product &amp; UI Design</span>
@@ -97,7 +97,7 @@ const alerts = computed(() =>
     </header>
 
     <div class="datanest-page__window-wrap">
-      <BrowserWindow :width="1180" :height="800" url="app.conversion.io/assistant" tab-title="Conversion">
+      <BrowserWindow :width="1180" :height="800" url="app.conversion.io/dashboard" tab-title="Conversion">
         <div class="dn">
           <aside class="dn__sidebar">
             <div class="dn__brand">
@@ -143,10 +143,6 @@ const alerts = computed(() =>
                 <div class="dn__icon-bell"></div>
                 <span>Alerts</span>
               </div>
-              <div class="dn__nav-item" :style="navStyle('assistant')" @click="goto('assistant')">
-                <div class="dn__icon-diamond"></div>
-                <span>AI Assistant</span>
-              </div>
               <div class="dn__nav-item" :style="navStyle('settings')" @click="goto('settings')">
                 <div class="dn__icon-circle"></div>
                 <span>Settings</span>
@@ -180,6 +176,10 @@ const alerts = computed(() =>
                 <span>Search</span>
               </div>
               <div class="dn__topbar-spacer"></div>
+              <div class="dn__live-badge">
+                <span class="dn__live-dot"></span>
+                <span>Live</span>
+              </div>
               <div class="dn__topbar-actions">
                 <div class="dn__topbar-btn"></div>
                 <div class="dn__topbar-btn"></div>
@@ -192,55 +192,7 @@ const alerts = computed(() =>
               </div>
             </div>
 
-            <template v-if="activeScreen === 'assistant'">
-              <div class="dn__section-header">
-                <h2 class="dn__section-title">AI Assistant</h2>
-                <div class="dn__section-actions">
-                  <div class="dn__btn dn__btn--ghost">New Chat</div>
-                  <div class="dn__btn dn__btn--solid">Share</div>
-                </div>
-              </div>
-
-              <div class="dn__assistant-hero">
-                <div class="dn__assistant-avatar"></div>
-                <div class="dn__assistant-heading">What can I help with?</div>
-              </div>
-
-              <div class="dn__prompt-box">
-                <div class="dn__prompt-hint">
-                  <div class="dn__icon-diamond dn__icon-diamond--sm"></div>
-                  <span>Ask anything AI assistant</span>
-                </div>
-                <div class="dn__prompt-actions">
-                  <div class="dn__prompt-tools">
-                    <div class="dn__prompt-tool">+</div>
-                    <div class="dn__prompt-tool"></div>
-                    <div class="dn__prompt-tool"></div>
-                  </div>
-                  <div class="dn__prompt-send">
-                    <div class="dn__prompt-send-circle"></div>
-                    <div class="dn__prompt-send-circle dn__prompt-send-circle--accent"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="dn__suggestions">
-                <div class="dn__suggestion">
-                  <div class="dn__suggestion-title">Conversions</div>
-                  <div class="dn__suggestion-text">How do I integrate conversions?</div>
-                </div>
-                <div class="dn__suggestion">
-                  <div class="dn__suggestion-title">Invalid Traffic</div>
-                  <div class="dn__suggestion-text">Can you show me the evolution...</div>
-                </div>
-                <div class="dn__suggestion">
-                  <div class="dn__suggestion-title">VPN Proxy</div>
-                  <div class="dn__suggestion-text">What does VPN proxy stand for?</div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else-if="activeScreen === 'dashboard'">
+            <template v-if="activeScreen === 'dashboard'">
               <h2 class="dn__section-title dn__section-title--block">Overview</h2>
               <div class="dn__stat-grid">
                 <div class="dn__stat-card">
@@ -440,6 +392,12 @@ const alerts = computed(() =>
   }
 }
 
+@keyframes dn-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
+  70% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
 .dn {
   height: 100%;
   display: flex;
@@ -563,20 +521,6 @@ const alerts = computed(() =>
     box-sizing: border-box;
   }
 
-  &__icon-diamond {
-    width: 13px;
-    height: 13px;
-    background: currentColor;
-    transform: rotate(45deg);
-    border-radius: 3px;
-
-    &--sm {
-      width: 13px;
-      height: 13px;
-      background: #a78bfa;
-    }
-  }
-
   &__icon-circle {
     width: 14px;
     height: 14px;
@@ -686,6 +630,29 @@ const alerts = computed(() =>
     flex: 1;
   }
 
+  &__live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #34d399;
+    font-size: 11.5px;
+    font-weight: 600;
+    margin-right: 12px;
+  }
+
+  &__live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+    animation: dn-pulse 1.8s infinite;
+  }
+
   &__topbar-actions {
     display: flex;
     align-items: center;
@@ -720,13 +687,6 @@ const alerts = computed(() =>
     color: #7a7885;
   }
 
-  &__section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-
   &__section-title {
     margin: 0;
     font-size: 20px;
@@ -736,133 +696,6 @@ const alerts = computed(() =>
     &--block {
       margin: 0 0 18px;
     }
-  }
-
-  &__section-actions {
-    display: flex;
-    gap: 10px;
-  }
-
-  &__btn {
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-
-    &--ghost {
-      border: 1px solid rgba(124, 92, 255, 0.3);
-      color: #d6d4dd;
-    }
-
-    &--solid {
-      background: #7c5cff;
-      color: #fff;
-      font-weight: 600;
-    }
-  }
-
-  &__assistant-hero {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  &__assistant-avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #7c5cff, #c4b5fd);
-  }
-
-  &__assistant-heading {
-    font-size: 22px;
-    font-weight: 700;
-    color: #f5f3f7;
-  }
-
-  &__prompt-box {
-    border: 1px solid rgba(124, 92, 255, 0.4);
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.08);
-  }
-
-  &__prompt-hint {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-    color: #8b899f;
-    font-size: 13.5px;
-  }
-
-  &__prompt-actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__prompt-tools {
-    display: flex;
-    gap: 10px;
-    color: #8b899f;
-  }
-
-  &__prompt-tool {
-    width: 22px;
-    height: 22px;
-    border: 1.4px solid currentColor;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
-
-  &__prompt-send {
-    display: flex;
-    gap: 8px;
-  }
-
-  &__prompt-send-circle {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #1e1c2e;
-    border: 1px solid rgba(124, 92, 255, 0.25);
-
-    &--accent {
-      background: linear-gradient(135deg, #7c5cff, #a78bfa);
-      border: none;
-    }
-  }
-
-  &__suggestions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 16px;
-  }
-
-  &__suggestion {
-    background: #1a1826;
-    border: 1px solid rgba(124, 92, 255, 0.15);
-    border-radius: 10px;
-    padding: 12px 14px;
-  }
-
-  &__suggestion-title {
-    font-size: 13px;
-    color: #f5f3f7;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  &__suggestion-text {
-    font-size: 12px;
-    color: #8b899f;
   }
 
   &__stat-grid {

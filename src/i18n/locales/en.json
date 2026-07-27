@@ -37,9 +37,9 @@
   },
   "projects": {
     "conversion": {
-      "title": "Conversion — AI Marketing Assistant",
-      "description": "An AI-powered analytics workspace for marketing teams — ask questions in plain language, track conversions across channels, and catch invalid traffic and VPN proxies before they skew the numbers.",
-      "considerations": "I wanted the AI conversation to feel like the centerpiece of the product without hiding the underlying data, so the metrics stay one click away in a persistent sidebar instead of being buried in a separate view."
+      "title": "Conversion — Real-Time Marketing Dashboard",
+      "description": "A live overview for marketing teams that tracks traffic and conversions in real time, compares campaign performance across channels, and catches invalid traffic and VPN proxies before they skew the numbers.",
+      "considerations": "Since the whole point is watching numbers move in real time, I kept the layout calm and glanceable — clear stat cards and charts up top, with campaign and conversion detail just one click away instead of competing for attention on the same screen."
     },
     "moneta": {
       "title": "Moneta — Financial Dashboard",

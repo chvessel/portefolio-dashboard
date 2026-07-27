@@ -37,9 +37,9 @@
   },
   "projects": {
     "conversion": {
-      "title": "Conversion — AI-marketingassistent",
-      "description": "Et AI-drevet analyseværktøj til marketingteams — stil spørgsmål i almindeligt sprog, følg konverteringer på tværs af kanaler, og fang ugyldig trafik og VPN-proxyer, før de skævvrider tallene.",
-      "considerations": "Jeg ville have AI-samtalen til at føles som produktets omdrejningspunkt uden at gemme de underliggende data væk, så nøgletallene altid er ét klik væk i en fast sidebar frem for begravet i en separat visning."
+      "title": "Conversion — realtids marketingdashboard",
+      "description": "Et live overblik til marketingteams, der følger trafik og konverteringer i realtid, sammenligner kampagneresultater på tværs af kanaler og fanger ugyldig trafik og VPN-proxyer, før de skævvrider tallene.",
+      "considerations": "Da hele pointen er at følge tal, der bevæger sig i realtid, holdt jeg layoutet roligt og letlæseligt — tydelige nøgletal og grafer øverst, mens kampagne- og konverteringsdetaljer kun er ét klik væk i stedet for at konkurrere om opmærksomheden på samme skærm."
     },
     "moneta": {
       "title": "Moneta — Financial Dashboard",
