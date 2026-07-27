@@ -1,6 +1,7 @@
 <script setup>
 import ActionButton from '@/components/buttons/ActionButton.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
+import ContactForm from '@/components/forms/ContactForm.vue';
 </script>
 
 <template>
@@ -9,11 +10,12 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
     <section class="hero">
       <div class="hero__container">
         <div class="hero__content">
-          <h1 class="hero__title">Hi, i'm Matt Delane</h1>
+          <h1 class="hero__title">Hi, i'm Carina</h1>
           <h2 class="hero__subtitle">Frontend Developer</h2>
           <p class="hero__text">
-            Here is some text about my work and passion as a Frontend Developer. 
-            Here is some text about my work and passion as a Frontend Developer.
+            Here you can look around and read about my work i've made. 
+            As a frontend developer, I live and breathe for UX/UI and user experience. 
+            I made it my mission to make navigating platforms as effortless and intuitive as possible for the user.
           </p>
           <div class="hero__actions">
             <ActionButton>Read more</ActionButton>
@@ -22,7 +24,7 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
 
         <div class="hero__visual">
           <figure class="hero__figure">
-            <img class="hero__img" src="/images/profile_pic_placeholder.jpg" alt="profile picture">
+            <img class="hero__img" src="/images/Profile_pic_me.png" alt="profile picture">
             <div class="hero__overlay"></div>
           </figure>
         </div>
@@ -33,7 +35,7 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
       <div class="portfolio__container">
         
         <div class="projects">
-          <h3 class="projects__title">Featured Projects</h3>
+          <h3 class="projects__title">Featured projects</h3>
           <div class="projects__grid">
 
             <ProjectCard 
@@ -58,17 +60,18 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
 
         <aside class="sidebar">
           <div class="sidebar__section">
-            <h3 class="sidebar__title">About Me</h3>
+            <h3 class="sidebar__title">About me</h3>
             <p class="sidebar__text">
-              I build modern and responsive web applications with a focus on 
-              user experience and clean code.
+              Frontend Developer specializing in UX/UI. 
+              Dedicated to crafting seamless digital interfaces where functionality meets flawless design. 
+              My goal is simple: making the complex feel effortless.
             </p>
           </div>
           
           <div class="sidebar__section">
-            <h3 class="sidebar__title">Contact Me</h3>
+            <h3 class="sidebar__title">Contact me</h3>
             <form class="contact-form">
-              <div class="contact-form__placeholder">Formular placeholder</div>
+              <ContactForm />
             </form>
           </div>
         </aside>

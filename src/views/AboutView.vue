@@ -6,12 +6,12 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
   <main class="about">
     <div class="about__container">
       <section class="about__content">
-        <h1 class="about__title">About <span class="about__title--alt">Me</span></h1>
+        <h1 class="about__title">About <span class="about__title--alt">me</span></h1>
         <div class="about__body">
           <p class="about__text">
             I am a passionate Frontend Developer based in Denmark, specialized in building 
             performant and aesthetic web applications. My journey started with a curiosity 
-            for design and evolved into a deep love for Vue.js and modern CSS.
+            for design and evolved into a deep love for Vue.js and modern CSS and Scss.
           </p>
           <p class="about__text">
             I believe that great software is built at the intersection of rigorous logic 
@@ -33,7 +33,7 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
 
       <section class="about__visual">
         <figure class="about__figure">
-          <img src="/images/profile_pic_placeholder.jpg" alt="Matt" class="about__img">
+          <img src="/images/Profile_pic_me.png" alt="Matt" class="about__img">
           <div class="about__overlay"></div>
         </figure>
       </section>

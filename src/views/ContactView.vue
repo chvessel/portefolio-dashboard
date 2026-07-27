@@ -6,13 +6,13 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
   <main class="contact">
     <div class="contact__container">
       <section class="contact__info">
-        <h1 class="contact__title">Get in <span class="contact__title--alt">Touch</span></h1>
+        <h1 class="contact__title">Get in <span class="contact__title--alt">touch</span></h1>
         <p class="contact__text">Have a project in mind? Let's talk about how I can help you.</p>
         
         <div class="contact__details">
           <div class="contact__item">
             <span class="contact__label">Email</span>
-            <p>matt@example.com</p>
+            <p>carina@haubro.me</p>
           </div>
           <div class="contact__item">
             <span class="contact__label">Location</span>
@@ -21,7 +21,7 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
         </div>
       </section>
 
-      <section class="contact__form-wrapper">
+      <section class="contact__form-contain">
         <form class="contact-form">
           <div class="contact-form__group">
             <label class="contact-form__label">Name</label>
@@ -35,7 +35,7 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
             <label class="contact-form__label">Message</label>
             <textarea class="contact-form__input contact-form__input--textarea" placeholder="How can I help?"></textarea>
           </div>
-          <ActionButton>Send Message</ActionButton>
+          <ActionButton>Send message</ActionButton>
         </form>
       </section>
     </div>
@@ -56,7 +56,9 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
     margin: 0 auto;
   }
 
-  &__info { flex: 1; }
+  &__info {
+    flex: 1; 
+  }
 
   &__title {
     font-size: 3rem;
@@ -64,17 +66,43 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
     &--alt { color: #f9c909; }
   }
 
-  &__text { color: #818181; margin-bottom: 3rem; }
+  &__text {
+    color: #818181; 
+    margin-bottom: 3rem; 
+  }
 
-  &__label { display: block; color: #f9c909; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
+  &__label {
+    display: block; 
+    color: #f9c909; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    margin-bottom: 5px; 
+  }
 
-  &__item { margin-bottom: 2rem; }
+  &__item {
+    margin-bottom: 2rem; 
+  }
 
-  &__form-wrapper { flex: 1.5; background: #161616; padding: 3rem; border-radius: 20px; }
+  &__form-contain {
+    flex: 1.5; 
+    background: #161616; 
+    padding: 3rem; 
+    border-radius: 20px; 
+  }
 
   .contact-form {
-    &__group { margin-bottom: 1.5rem; }
-    &__label { display: block; margin-bottom: 8px; color: #ccc; font-size: 0.9rem; }
+    
+    &__group {
+      margin-bottom: 1.5rem; 
+    }
+
+    &__label {
+      display: block; 
+      margin-bottom: 8px; 
+      color: #ccc; 
+      font-size: 0.9rem; 
+    }
+
     &__input {
       width: 100%;
       background: #0d0d0d;
@@ -83,8 +111,16 @@ import ActionButton from '@/components/buttons/ActionButton.vue';
       color: white;
       border-radius: 8px;
       outline: none;
-      &:focus { border-color: #f9c909; }
-      &--textarea { height: 150px; resize: none; }
+      
+      &:focus {
+        border-color: #f9c909; 
+      }
+
+      &--textarea {
+        height: 150px; 
+        resize: none; 
+        width: 100%;
+      }
     }
   }
 }

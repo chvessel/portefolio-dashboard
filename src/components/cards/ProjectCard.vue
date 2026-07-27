@@ -1,4 +1,6 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+
 defineProps({
   image: String,
   title: String,
@@ -19,7 +21,8 @@ defineProps({
       <p class="card__description">{{ description }}</p>
       
       <div class="card__footer">
-        <a :href="link" class="card__link">View more</a>
+        <RouterLink v-if="link" :to="link" class="card__link">View more</RouterLink>
+        <a v-else class="card__link">View more</a>
       </div>
     </div>
   </div>
@@ -74,7 +77,7 @@ defineProps({
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   &__description {
