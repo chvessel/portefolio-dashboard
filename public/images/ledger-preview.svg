@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <defs>
+    <radialGradient id="glowL" cx="85%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#bef264" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0c0f0a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="360" fill="#0c0f0a"/>
+  <rect width="600" height="360" fill="url(#glowL)"/>
+
+  <rect x="0" y="0" width="56" height="360" fill="#0a0c0a"/>
+  <polygon points="18,150 34,164 18,178" fill="#bef264"/>
+  <rect x="16" y="200" width="24" height="24" rx="6" fill="#1c2418"/>
+  <rect x="16" y="232" width="24" height="24" rx="6" fill="#1c2418"/>
+
+  <rect x="80" y="24" width="200" height="94" rx="14" fill="#171a16" stroke="#262a22"/>
+  <rect x="96" y="40" width="90" height="8" rx="4" fill="#8a9682"/>
+  <circle cx="252" cy="52" r="16" fill="none" stroke="#2a3324" stroke-width="6"/>
+  <circle cx="252" cy="52" r="16" fill="none" stroke="#bef264" stroke-width="6" stroke-dasharray="42 100"/>
+  <rect x="96" y="76" width="60" height="18" rx="4" fill="#e9efe4"/>
+  <rect x="96" y="98" width="90" height="8" rx="4" fill="#5a6552"/>
+
+  <rect x="292" y="24" width="200" height="94" rx="14" fill="#171a16" stroke="#262a22"/>
+  <rect x="308" y="40" width="90" height="8" rx="4" fill="#8a9682"/>
+  <circle cx="464" cy="52" r="16" fill="none" stroke="#2a3324" stroke-width="6"/>
+  <circle cx="464" cy="52" r="16" fill="none" stroke="#bef264" stroke-width="6" stroke-dasharray="60 100"/>
+  <rect x="308" y="76" width="50" height="18" rx="4" fill="#e9efe4"/>
+  <rect x="308" y="98" width="90" height="8" rx="4" fill="#5a6552"/>
+
+  <rect x="80" y="134" width="176" height="204" rx="14" fill="#171a16" stroke="#262a22"/>
+  <rect x="96" y="150" width="90" height="8" rx="4" fill="#8a9682"/>
+  <circle cx="168" cy="236" r="58" fill="none" stroke="#2a3324" stroke-width="14"/>
+  <circle cx="168" cy="236" r="58" fill="none" stroke="#bef264" stroke-width="14" stroke-dasharray="164 400" transform="rotate(-90 168 236)"/>
+  <text x="168" y="244" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#eef4e8" font-weight="700">45%</text>
+
+  <rect x="272" y="134" width="220" height="94" rx="14" fill="#171a16" stroke="#262a22"/>
+  <rect x="288" y="150" width="90" height="8" rx="4" fill="#8a9682"/>
+  <rect x="288" y="172" width="110" height="16" rx="4" fill="#e9efe4"/>
+
+  <rect x="272" y="244" width="220" height="94" rx="14" fill="linear-gradient(#171a16,#171a16)" fill-opacity="1" stroke="#3a4a2a"/>
+  <rect x="272" y="244" width="220" height="94" rx="14" fill="#1b2016"/>
+  <rect x="288" y="260" width="90" height="8" rx="4" fill="#8a9682"/>
+  <rect x="288" y="282" width="140" height="18" rx="4" fill="#e9efe4"/>
+  <rect x="288" y="308" width="100" height="8" rx="4" fill="#bef264"/>
+
+  <rect x="80" y="244" width="176" height="94" rx="14" fill="#171a16" stroke="#262a22"/>
+  <rect x="96" y="260" width="90" height="8" rx="4" fill="#8a9682"/>
+  <g>
+    <rect x="100" y="290" width="16" height="34" rx="3" fill="#3f4a34"/>
+    <rect x="122" y="278" width="16" height="46" rx="3" fill="#bef264"/>
+    <rect x="144" y="296" width="16" height="28" rx="3" fill="#3f4a34"/>
+    <rect x="166" y="270" width="16" height="54" rx="3" fill="#84cc16"/>
+    <rect x="188" y="284" width="16" height="40" rx="3" fill="#3f4a34"/>
+    <rect x="210" y="264" width="16" height="60" rx="3" fill="#bef264"/>
+  </g>
+</svg>

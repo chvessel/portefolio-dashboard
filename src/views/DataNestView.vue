@@ -101,7 +101,14 @@ const alerts = computed(() =>
         <div class="dn">
           <aside class="dn__sidebar">
             <div class="dn__brand">
-              <div class="dn__brand-mark"></div>
+              <div class="dn__brand-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l1.5-5h15L21 9" />
+                  <path d="M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0" />
+                  <path d="M5 9v10h14V9" />
+                  <path d="M9 19v-6h6v6" />
+                </svg>
+              </div>
               <div class="dn__brand-name">DataNest</div>
             </div>
 
@@ -462,12 +469,17 @@ const alerts = computed(() =>
   }
 
   &__brand-mark {
-    width: 26px;
-    height: 26px;
-    background: linear-gradient(135deg, #7c5cff, #c4b5fd);
-    transform: rotate(45deg);
-    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124, 92, 255, 0.14);
+    color: #a78bfa;
+
+    svg { width: 18px; height: 18px; }
   }
 
   &__brand-name {

@@ -12,7 +12,7 @@ const contactEmail = 'carina@haubro.me';
 const contactPhone = '+45 42 74 29 14';
 const contactPhoneHref = 'tel:+4542742914';
 
-const featuredIds = ['finance', 'chatbot', 'streaming'];
+const featuredIds = ['ledger', 'cortex', 'currents'];
 const featuredProjects = projects.filter((p) => featuredIds.includes(p.id));
 
 const isContactModalOpen = ref(false);
