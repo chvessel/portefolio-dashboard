@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <g fill-rule="evenodd">
+    <!-- Bogstav C (Hvid) -->
+    <path fill="#ffffff" d="M220 130 C137 130 70 197 70 280 C70 363 137 430 220 430 C230 430 239 429 248 427 L242 408 C235 409 228 410 220 410 C148 410 90 352 90 280 C90 208 148 150 220 150 C231 150 242 151 252 154 L258 135 C246 132 233 130 220 130 Z" />
+
+    <!-- Bogstav H (Guld - #b8860a) -->
+    <path fill="#b8860a" d="M215 80 H235 V210 H325 V80 H345 V320 H325 V230 H235 V320 H215 V80 Z" />
+
+    <!-- Bogstav V (Hvid) -->
+    <path fill="#ffffff" d="M160 170 L280 470 L400 170 H378 L280 415 L182 170 H160 Z" />
+  </g>
+</svg>

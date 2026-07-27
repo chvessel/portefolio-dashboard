@@ -7,7 +7,7 @@ const { t } = useI18n();
 
 <template>
   <RouterLink to="/" class="logo" :aria-label="t('logo.aria')">
-    <span class="logo__mark">C<span class="logo__accent">H</span>V</span>
+    <img src="/images/portfolio-logo.svg" alt="CHV" class="logo__mark" />
   </RouterLink>
 </template>
 
@@ -18,27 +18,20 @@ const { t } = useI18n();
 }
 
 .logo__mark {
-  font-family: $font-main;
-  font-size: 34px;
-  font-weight: $font-weight-thin;
-  letter-spacing: 7px;
-  color: $color-white;
+  display: block;
+  width: 56px;
+  height: 56px;
   transition: $transition-base;
 
   .logo:hover & {
-    letter-spacing: 9px;
+    transform: scale(1.06);
   }
-}
-
-.logo__accent {
-  color: $color-primary;
-  font-weight: $font-weight-medium;
 }
 
 @media (max-width: 768px) {
   .logo__mark {
-    font-size: 26px;
-    letter-spacing: 5px;
+    width: 44px;
+    height: 44px;
   }
 }
 </style>
