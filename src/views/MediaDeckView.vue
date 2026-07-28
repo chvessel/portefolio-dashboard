@@ -34,6 +34,7 @@ const services = [
   { name: 'Prime Video', category: 'Video', price: '$8.99', renews: 'Jun 14', usage: 'High', color: '#00a8e1' },
   { name: 'HBO Max', category: 'Video', price: '$16.99', renews: 'Jun 18', usage: 'Low', color: '#7c3aed' },
   { name: 'Hulu', category: 'Video', price: '$7.99', renews: 'Jun 22', usage: 'Low', color: '#1ce783' },
+  { name: 'HelloFresh', category: 'Meal kit', price: '$54.99', renews: 'Jun 8', usage: 'Medium', color: '#91c11e' },
 ];
 
 const activity = [
@@ -42,6 +43,7 @@ const activity = [
   { title: 'The Midnight Library', service: 'Kindle Unlimited', date: 'May 31', duration: '45m', type: 'Read' },
   { title: 'Q3 Planning Doc', service: 'Notion', date: 'May 30', duration: '25m', type: 'Edited' },
   { title: 'The Mandalorian, S3', service: 'Disney+', date: 'May 29', duration: '38m', type: 'Watched' },
+  { title: 'Week 23 box: Teriyaki Salmon', service: 'HelloFresh', date: 'Jun 3', duration: '35m', type: 'Cooked' },
 ];
 
 const recommendations = [
@@ -115,12 +117,12 @@ const alertDotStyle = (severity) => {
             <div class="ss__stat-grid">
               <div class="ss__stat-card">
                 <div class="ss__stat-label">Monthly spend</div>
-                <div class="ss__stat-value">$98.39</div>
-                <div class="ss__stat-delta ss__stat-delta--down">+$6 vs last month</div>
+                <div class="ss__stat-value">$153.38</div>
+                <div class="ss__stat-delta ss__stat-delta--down">+$55 vs last month</div>
               </div>
               <div class="ss__stat-card">
                 <div class="ss__stat-label">Active subscriptions</div>
-                <div class="ss__stat-value">8</div>
+                <div class="ss__stat-value">9</div>
               </div>
               <div class="ss__stat-card">
                 <div class="ss__stat-label">Hours used</div>
@@ -191,15 +193,16 @@ const alertDotStyle = (severity) => {
                 <div class="ss__panel-label">Spend by Service</div>
                 <div class="ss__donut-wrap"><div class="ss__donut"></div></div>
                 <div class="ss__legend">
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#e50914"></span>Netflix<span class="ss__legend-pct">22%</span></div>
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#7c3aed"></span>HBO Max<span class="ss__legend-pct">17%</span></div>
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#f8991c"></span>Audible<span class="ss__legend-pct">15%</span></div>
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#a855f7"></span>Others<span class="ss__legend-pct">46%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#91c11e"></span>HelloFresh<span class="ss__legend-pct">36%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#7c3aed"></span>HBO Max<span class="ss__legend-pct">11%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#e50914"></span>Netflix<span class="ss__legend-pct">10%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#f8991c"></span>Audible<span class="ss__legend-pct">10%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#a855f7"></span>Others<span class="ss__legend-pct">33%</span></div>
                 </div>
               </div>
               <div class="ss__panel">
                 <div class="ss__panel-label">Yearly Projection</div>
-                <div class="ss__stat-value" style="margin-bottom: 6px">$1,180.68</div>
+                <div class="ss__stat-value" style="margin-bottom: 6px">$1,840.56</div>
                 <div class="ss__stat-label">at current subscription levels</div>
               </div>
             </div>
@@ -403,7 +406,7 @@ const alertDotStyle = (severity) => {
 
   &__donut {
     width: 130px; height: 130px; border-radius: 50%;
-    background: conic-gradient(#e50914 0deg 79deg, #7c3aed 79deg 140deg, #f8991c 140deg 194deg, #a855f7 194deg 360deg);
+    background: conic-gradient(#91c11e 0deg 130deg, #7c3aed 130deg 170deg, #e50914 170deg 206deg, #f8991c 206deg 242deg, #a855f7 242deg 360deg);
   }
 
   &__legend { display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: #e3d5df; }

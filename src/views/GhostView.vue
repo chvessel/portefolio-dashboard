@@ -36,19 +36,19 @@ const messages = [
 
 const historyItems = [
   { title: 'Support ticket summary', snippet: 'Top topics were billing, password resets...', time: '2h ago' },
-  { title: 'Onboarding email draft', snippet: 'Warm welcome sequence for new signups', time: 'Yesterday' },
+  { title: 'Talked through a hard decision', snippet: 'Weighing a job offer against staying put', time: 'Yesterday' },
   { title: 'Sprint retro notes', snippet: 'Key blockers: staging env, design handoff', time: '2 days ago' },
-  { title: 'Product FAQ rewrite', snippet: 'Simplified language for the pricing page', time: '4 days ago' },
-  { title: 'Competitor summary', snippet: 'Three tools compared on pricing & features', time: '1 week ago' },
+  { title: 'Evening check-in', snippet: 'Unpacking a stressful conversation with a friend', time: '4 days ago' },
+  { title: 'Apartment move checklist', snippet: 'Turned a messy to-do list into a step-by-step plan', time: '1 week ago' },
 ];
 
 const promptItems = [
   { title: 'Summarize thread', desc: 'Condense a long conversation into key points' },
-  { title: 'Rewrite tone', desc: 'Make a draft sound warmer and more concise' },
-  { title: 'Bug triage', desc: 'Turn a report into a structured ticket' },
+  { title: 'Talk it through', desc: 'Think out loud about something that\'s on your mind' },
+  { title: 'Decision helper', desc: 'Weigh a tough choice without the judgment' },
   { title: 'Meeting notes', desc: 'Extract decisions and action items' },
   { title: 'Explain simply', desc: 'Rewrite a technical answer for non-experts' },
-  { title: 'Compare options', desc: 'Lay out trade-offs in a short table' },
+  { title: 'Untangle a problem', desc: 'Break something overwhelming into next steps' },
 ];
 
 const responseModes = [

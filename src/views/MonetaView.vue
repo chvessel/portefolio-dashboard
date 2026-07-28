@@ -44,14 +44,14 @@ const industries = {
       { label: 'Retainer clients', value: '6', sub: 'Renewed this week: 2', percent: 80, glow: false },
     ],
   },
-  agency: {
-    label: 'Agency',
-    sectionLabel: 'Retainers',
+  dealership: {
+    label: 'Car Dealership',
+    sectionLabel: 'Vehicles',
     bills: [
-      { label: 'Active retainers', value: '14', sub: '2 new this week', percent: 60, glow: false },
-      { label: 'Pending approvals', value: '5', sub: 'Approved this week: 3', percent: 45, glow: true },
-      { label: 'Client invoices', value: '22', sub: 'Sent this week: 6', percent: 70, glow: false },
-      { label: 'Campaign budgets', value: '8', sub: 'Reviewed this week: 3', percent: 55, glow: false },
+      { label: 'In stock', value: '48', sub: '6 arrived this week', percent: 58, glow: false },
+      { label: 'Pending trade-ins', value: '9', sub: 'Appraised this week: 4', percent: 45, glow: true },
+      { label: 'Financing declined', value: '3', sub: 'Declined this week: 1', percent: 14, glow: false },
+      { label: 'Service bookings', value: '21', sub: 'Booked this week: 7', percent: 66, glow: false },
     ],
   },
 };
@@ -145,7 +145,7 @@ const statusStyle = (status) => {
                 <option value="construction">Construction</option>
                 <option value="retail">Retail</option>
                 <option value="freelance">Freelance</option>
-                <option value="agency">Agency</option>
+                <option value="dealership">Car Dealership</option>
               </select>
             </div>
             <div class="ldg__topbar-spacer"></div>

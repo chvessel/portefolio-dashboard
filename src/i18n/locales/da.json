@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Forside",
-    "portfolio": "Portefolio",
+    "portefolio": "Portefolio",
     "back": "Tilbage"
   },
   "language": {
@@ -20,11 +20,14 @@
     "featuredTitle": "Udvalgte projekter",
     "aboutTitle": "Om mig",
     "aboutText": "Frontend-udvikler med drivkraft for UX/UI. Jeg kan godt lide at få det komplicerede til at blive intuitivt og brugervenligt. Udvikle og designe brugergrænseflader, produkter m.m. der gør hverdagen nemmere, ",
+    "contactTitle": "Kontakt mig",
+    "contactCta": "Kontakt mig",
+    "contactPitch": "Så står du og mangler en som mig på dit hold, så tøv ikke med at række ud.",
     "close": "Luk",
     "emailLabel": "Email",
     "phoneLabel": "Telefon"
   },
-  "portefolio": {
+  "portfolio": {
     "titleMain": "Mit",
     "titleAlt": "arbejde",
     "description": "Et overblik over projekter, hvor jeg har indtænkt både design med rigtig kode.",
@@ -62,6 +65,7 @@
     "spine": {
       "title": "Spine - Dit digitale bogunivers (shop fysiske bøger, lydbøger & e-bøger)",
       "description": "En online boghandel smeltet sammen med streaming. Her kan du købe fysiske bøger, lydbøger og e-bøger men også,samtidig kunne følge med i din nuværende e-bog eller lydbog, få anbefalinger, anmelde bøger samt tjekke dem af som en fremtidig bog du vil igang med - alt sammen tilpasset dit behov",
+      "considerations": "Jeg lånte en del greb fra streamingtjenester med vilje — 'fortsæt hvor du slap', anbefalinger baseret på genre og en liste over fremtidige bøger — for at gøre det lige så nemt at blive hængende i en bog, som det er at blive hængende i en serie.",
       "problem": "At købe bøger online betyder som regel, at man vælger ét format og holder sig til det, selvom de fleste faktisk gerne vil blande det — læse på sofaen, lytte på løbeturen, gøre den færdig på togturen hjem. Med spine bliver din bog set som ét produkt med tre formater i stedet for tre separate køb, man skal finde hver for sig."
     },
     "dayframe": {
