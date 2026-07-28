@@ -1,7 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import BrowserWindow from '@/components/browser/BrowserWindow.vue';
+import { useI18n } from 'vue-i18n';
 import ProjectPageHero from '@/components/project/ProjectPageHero.vue';
+import AppFrame from '@/components/project/AppFrame.vue';
+
+const { t } = useI18n();
 
 const activeScreen = ref('overview');
 const goto = (screen) => { activeScreen.value = screen; };
@@ -23,25 +26,28 @@ const navStyle = (screen) => {
 };
 
 const services = [
-  { name: 'Nimbus+', price: '$15.99', renews: 'Jun 4', usage: 'High', color: '#ec4899' },
-  { name: 'PlayReel', price: '$9.99', renews: 'Jun 12', usage: 'Medium', color: '#f472b6' },
-  { name: 'AudioWave', price: '$11.99', renews: 'Jun 18', usage: 'High', color: '#c026d3' },
-  { name: 'DocuFlix', price: '$6.99', renews: 'Jun 22', usage: 'Low', color: '#a855f7' },
-  { name: 'LiveArena', price: '$13.99', renews: 'Jun 27', usage: 'Low', color: '#e879f9' },
+  { name: 'Netflix', category: 'Video', price: '$15.49', renews: 'Jun 4', usage: 'High', color: '#e50914' },
+  { name: 'Audible', category: 'Audiobooks', price: '$14.95', renews: 'Jun 11', usage: 'Medium', color: '#f8991c' },
+  { name: 'Kindle Unlimited', category: 'E-books', price: '$11.99', renews: 'Jun 26', usage: 'High', color: '#ff9900' },
+  { name: 'Notion', category: 'Notes', price: '$8.00', renews: 'Jun 30', usage: 'Medium', color: '#9ca3af' },
+  { name: 'Disney+', category: 'Video', price: '$13.99', renews: 'Jun 9', usage: 'Medium', color: '#1e3a8a' },
+  { name: 'Prime Video', category: 'Video', price: '$8.99', renews: 'Jun 14', usage: 'High', color: '#00a8e1' },
+  { name: 'HBO Max', category: 'Video', price: '$16.99', renews: 'Jun 18', usage: 'Low', color: '#7c3aed' },
+  { name: 'Hulu', category: 'Video', price: '$7.99', renews: 'Jun 22', usage: 'Low', color: '#1ce783' },
 ];
 
-const watchHistory = [
-  { title: 'The Long Horizon', service: 'Nimbus+', date: 'Jun 2', duration: '2h 08m', type: 'Movie' },
-  { title: 'Kitchen Lore, S3', service: 'DocuFlix', date: 'Jun 1', duration: '48m', type: 'Series' },
-  { title: 'Late Night Sessions', service: 'AudioWave', date: 'May 30', duration: '1h 12m', type: 'Podcast' },
-  { title: 'Coastline, S1', service: 'PlayReel', date: 'May 29', duration: '3h 40m', type: 'Series' },
-  { title: 'Grand Prix Live', service: 'LiveArena', date: 'May 28', duration: '2h 15m', type: 'Live' },
+const activity = [
+  { title: 'Stranger Things, S5', service: 'Netflix', date: 'Jun 2', duration: '52m', type: 'Watched' },
+  { title: 'Atomic Habits', service: 'Audible', date: 'Jun 1', duration: '1h 20m', type: 'Listened' },
+  { title: 'The Midnight Library', service: 'Kindle Unlimited', date: 'May 31', duration: '45m', type: 'Read' },
+  { title: 'Q3 Planning Doc', service: 'Notion', date: 'May 30', duration: '25m', type: 'Edited' },
+  { title: 'The Mandalorian, S3', service: 'Disney+', date: 'May 29', duration: '38m', type: 'Watched' },
 ];
 
 const recommendations = [
-  { severity: 'high', title: 'Cancel LiveArena', detail: 'Used only 2h 15m this month — that’s $6.99/hour watched', time: 'Save $13.99/mo' },
-  { severity: 'medium', title: 'Downgrade DocuFlix', detail: 'Standard plan covers your usual 1 device, 1080p habits', time: 'Save $3/mo' },
-  { severity: 'low', title: 'Bundle Nimbus+ & AudioWave', detail: 'A combined plan is available for both services', time: 'Save $4.50/mo' },
+  { severity: 'high', title: 'Cancel HBO Max', detail: 'Used only 40 minutes this month — that’s over $25 per hour watched', time: 'Save $16.99/mo' },
+  { severity: 'medium', title: 'Downgrade Hulu', detail: 'The ad-supported plan covers your usual viewing habits', time: 'Save $4/mo' },
+  { severity: 'low', title: 'Bundle Disney+ & Hulu', detail: 'A combined plan is available for both services', time: 'Save $5/mo' },
 ];
 
 const alertDotStyle = (severity) => {
@@ -52,14 +58,15 @@ const alertDotStyle = (severity) => {
 
 <template>
   <ProjectPageHero
-    eyebrow="Featured Project"
-    title="MediaDeck — Streaming Services Overview"
-    description="A dashboard that gathers your subscriptions, watch history, and spending across streaming services in one overview, so you can see at a glance what you're actually using."
+    :eyebrow="t('portfolio.featuredProject')"
+    :title="t('projects.mediadeck.title')"
+    :description="t('projects.mediadeck.description')"
+    :problem-label="t('portfolio.problemLabel')"
+    :problem="t('projects.mediadeck.problem')"
     :tags="['Vue3.js', 'Node.js', 'SCSS', 'REST API']"
     accent="#db2777"
-    bg="#120a10"
   >
-    <BrowserWindow :width="1180" :height="800" url="app.mediadeck.tv/overview" tab-title="MediaDeck">
+    <AppFrame :max-width="1320">
       <div class="ss">
         <aside class="ss__sidebar">
           <div class="ss__brand">
@@ -83,7 +90,7 @@ const alertDotStyle = (severity) => {
             </div>
             <div class="ss__nav-item" :style="navStyle('history')" @click="goto('history')">
               <div class="ss__icon-lines"><span></span><span></span><span></span></div>
-              <span>Watch History</span>
+              <span>Activity</span>
             </div>
             <div class="ss__nav-item" :style="navStyle('spending')" @click="goto('spending')">
               <div class="ss__icon-triangle"></div>
@@ -108,16 +115,16 @@ const alertDotStyle = (severity) => {
             <div class="ss__stat-grid">
               <div class="ss__stat-card">
                 <div class="ss__stat-label">Monthly spend</div>
-                <div class="ss__stat-value">$58.95</div>
-                <div class="ss__stat-delta ss__stat-delta--down">+$4 vs last month</div>
+                <div class="ss__stat-value">$98.39</div>
+                <div class="ss__stat-delta ss__stat-delta--down">+$6 vs last month</div>
               </div>
               <div class="ss__stat-card">
                 <div class="ss__stat-label">Active subscriptions</div>
-                <div class="ss__stat-value">5</div>
+                <div class="ss__stat-value">8</div>
               </div>
               <div class="ss__stat-card">
-                <div class="ss__stat-label">Hours watched</div>
-                <div class="ss__stat-value">27.4h</div>
+                <div class="ss__stat-label">Hours used</div>
+                <div class="ss__stat-value">34.2h</div>
                 <div class="ss__stat-delta ss__stat-delta--up">this month</div>
               </div>
               <div class="ss__stat-card">
@@ -155,6 +162,7 @@ const alertDotStyle = (severity) => {
             <div class="ss__sub-grid">
               <div v-for="(s, i) in services" :key="i" class="ss__sub-card">
                 <div class="ss__sub-icon" :style="{ background: s.color }"></div>
+                <div class="ss__sub-category">{{ s.category }}</div>
                 <div class="ss__sub-name">{{ s.name }}</div>
                 <div class="ss__sub-price">{{ s.price }}<span>/mo</span></div>
                 <div class="ss__sub-renew">Renews {{ s.renews }}</div>
@@ -164,12 +172,12 @@ const alertDotStyle = (severity) => {
           </template>
 
           <template v-else-if="activeScreen === 'history'">
-            <h2 class="ss__section-title">Watch History</h2>
+            <h2 class="ss__section-title">Activity</h2>
             <div class="ss__table-panel">
               <div class="ss__table-head">
                 <div>Title</div><div>Service</div><div>Date</div><div>Duration</div><div>Type</div>
               </div>
-              <div v-for="(w, i) in watchHistory" :key="i" class="ss__table-row">
+              <div v-for="(w, i) in activity" :key="i" class="ss__table-row">
                 <div>{{ w.title }}</div><div>{{ w.service }}</div><div class="ss__table-dim">{{ w.date }}</div>
                 <div>{{ w.duration }}</div><div>{{ w.type }}</div>
               </div>
@@ -183,15 +191,15 @@ const alertDotStyle = (severity) => {
                 <div class="ss__panel-label">Spend by Service</div>
                 <div class="ss__donut-wrap"><div class="ss__donut"></div></div>
                 <div class="ss__legend">
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#ec4899"></span>Nimbus+<span class="ss__legend-pct">27%</span></div>
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#c026d3"></span>AudioWave<span class="ss__legend-pct">20%</span></div>
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#e879f9"></span>LiveArena<span class="ss__legend-pct">24%</span></div>
-                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#a855f7"></span>Others<span class="ss__legend-pct">29%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#e50914"></span>Netflix<span class="ss__legend-pct">22%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#7c3aed"></span>HBO Max<span class="ss__legend-pct">17%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#f8991c"></span>Audible<span class="ss__legend-pct">15%</span></div>
+                  <div class="ss__legend-item"><span class="ss__legend-dot" style="background:#a855f7"></span>Others<span class="ss__legend-pct">46%</span></div>
                 </div>
               </div>
               <div class="ss__panel">
                 <div class="ss__panel-label">Yearly Projection</div>
-                <div class="ss__stat-value" style="margin-bottom: 6px">$707.40</div>
+                <div class="ss__stat-value" style="margin-bottom: 6px">$1,180.68</div>
                 <div class="ss__stat-label">at current subscription levels</div>
               </div>
             </div>
@@ -212,13 +220,13 @@ const alertDotStyle = (severity) => {
           </template>
         </main>
       </div>
-    </BrowserWindow>
+    </AppFrame>
   </ProjectPageHero>
 </template>
 
 <style lang="scss" scoped>
 .ss {
-  height: 100%;
+  min-height: 760px;
   display: flex;
   background: #1a0f17;
   font-family: 'Inter', system-ui, sans-serif;
@@ -359,6 +367,9 @@ const alertDotStyle = (severity) => {
   }
 
   &__sub-icon { width: 30px; height: 30px; border-radius: 8px; margin-bottom: 12px; }
+  &__sub-category {
+    font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: #d199bb; font-weight: 700; margin-bottom: 4px;
+  }
   &__sub-name { font-size: 14.5px; font-weight: 700; color: #fbeaf3; margin-bottom: 4px; }
   &__sub-price { font-size: 19px; font-weight: 700; color: #fbeaf3; margin-bottom: 4px;
     span { font-size: 12px; font-weight: 400; color: #b79aad; }
@@ -392,7 +403,7 @@ const alertDotStyle = (severity) => {
 
   &__donut {
     width: 130px; height: 130px; border-radius: 50%;
-    background: conic-gradient(#ec4899 0deg 97deg, #c026d3 97deg 169deg, #e879f9 169deg 255deg, #a855f7 255deg 360deg);
+    background: conic-gradient(#e50914 0deg 79deg, #7c3aed 79deg 140deg, #f8991c 140deg 194deg, #a855f7 194deg 360deg);
   }
 
   &__legend { display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: #e3d5df; }

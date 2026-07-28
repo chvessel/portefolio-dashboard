@@ -5,12 +5,13 @@ defineProps({
   description: { type: String, required: true },
   tags: { type: Array, default: () => [] },
   accent: { type: String, default: '#7c5cff' },
-  bg: { type: String, default: '#0a0912' },
+  problemLabel: { type: String, default: 'The problem' },
+  problem: { type: String, default: '' },
 });
 </script>
 
 <template>
-  <main class="project-hero" :style="{ background: `radial-gradient(1200px 600px at 80% -10%, ${accent}29, transparent), ${bg}` }">
+  <main class="project-hero">
     <header class="project-hero__header">
       <div class="project-hero__eyebrow">
         <span class="project-hero__eyebrow-dot" :style="{ background: accent }"></span>
@@ -20,6 +21,11 @@ defineProps({
       <p class="project-hero__description">{{ description }}</p>
       <div class="project-hero__tags">
         <span v-for="tag in tags" :key="tag" class="project-hero__tag">{{ tag }}</span>
+      </div>
+
+      <div v-if="problem" class="project-hero__problem" :style="{ borderColor: `${accent}4d` }">
+        <div class="project-hero__problem-label" :style="{ color: accent }">{{ problemLabel }}</div>
+        <p class="project-hero__problem-text">{{ problem }}</p>
       </div>
     </header>
 
@@ -34,10 +40,11 @@ defineProps({
   min-height: 100vh;
   padding: 72px 5vw 96px;
   box-sizing: border-box;
+  background: $color-bg;
   font-family: 'Inter', system-ui, sans-serif;
 
   &__header {
-    max-width: 1180px;
+    max-width: 1400px;
     margin: 0 auto 44px;
   }
 
@@ -70,7 +77,7 @@ defineProps({
 
   &__description {
     margin: 0 0 24px;
-    max-width: 640px;
+    max-width: 700px;
     font-size: 16px;
     line-height: 1.6;
     color: #b3b0bb;
@@ -89,6 +96,30 @@ defineProps({
     background: rgba(255, 255, 255, 0.04);
     color: #d6d4dd;
     font-size: 13px;
+  }
+
+  &__problem {
+    margin-top: 28px;
+    max-width: 700px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  &__problem-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  &__problem-text {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #c7c4cd;
   }
 
   &__window-wrap {

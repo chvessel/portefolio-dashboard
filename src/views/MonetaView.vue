@@ -1,7 +1,10 @@
 <script setup>
-import { ref } from 'vue';
-import BrowserWindow from '@/components/browser/BrowserWindow.vue';
+import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import ProjectPageHero from '@/components/project/ProjectPageHero.vue';
+import AppFrame from '@/components/project/AppFrame.vue';
+
+const { t } = useI18n();
 
 const activeScreen = ref('dashboard');
 const goto = (screen) => { activeScreen.value = screen; };
@@ -10,12 +13,51 @@ const ring = (percent) => ({
   background: `conic-gradient(#bef264 ${percent}%, rgba(255,255,255,0.08) 0)`,
 });
 
-const bills = [
-  { label: 'Ready to assign', value: '200', sub: '42 bills this week', percent: 42, glow: false },
-  { label: 'Pending sign offs', value: '63', sub: '17 signed off this week', percent: 68, glow: true },
-  { label: 'Declined', value: '5', sub: 'Declined this week: 2', percent: 12, glow: false },
-  { label: 'RFI', value: '13', sub: 'Requested this week: 2', percent: 76, glow: false },
-];
+const industries = {
+  construction: {
+    label: 'Construction',
+    sectionLabel: 'Bills',
+    bills: [
+      { label: 'Ready to assign', value: '200', sub: '42 bills this week', percent: 42, glow: false },
+      { label: 'Pending sign offs', value: '63', sub: '17 signed off this week', percent: 68, glow: true },
+      { label: 'Declined', value: '5', sub: 'Declined this week: 2', percent: 12, glow: false },
+      { label: 'RFI', value: '13', sub: 'Requested this week: 2', percent: 76, glow: false },
+    ],
+  },
+  retail: {
+    label: 'Retail',
+    sectionLabel: 'Orders',
+    bills: [
+      { label: 'New orders', value: '128', sub: '24 orders this week', percent: 55, glow: false },
+      { label: 'Pending fulfillment', value: '34', sub: '9 shipped this week', percent: 64, glow: true },
+      { label: 'Returns', value: '7', sub: 'Returned this week: 3', percent: 18, glow: false },
+      { label: 'Low stock alerts', value: '11', sub: 'Restocked this week: 4', percent: 72, glow: false },
+    ],
+  },
+  freelance: {
+    label: 'Freelance',
+    sectionLabel: 'Invoices',
+    bills: [
+      { label: 'Active invoices', value: '9', sub: '3 sent this week', percent: 50, glow: false },
+      { label: 'Awaiting payment', value: '4', sub: '1 overdue', percent: 40, glow: true },
+      { label: 'Draft proposals', value: '3', sub: 'Sent this week: 1', percent: 25, glow: false },
+      { label: 'Retainer clients', value: '6', sub: 'Renewed this week: 2', percent: 80, glow: false },
+    ],
+  },
+  agency: {
+    label: 'Agency',
+    sectionLabel: 'Retainers',
+    bills: [
+      { label: 'Active retainers', value: '14', sub: '2 new this week', percent: 60, glow: false },
+      { label: 'Pending approvals', value: '5', sub: 'Approved this week: 3', percent: 45, glow: true },
+      { label: 'Client invoices', value: '22', sub: 'Sent this week: 6', percent: 70, glow: false },
+      { label: 'Campaign budgets', value: '8', sub: 'Reviewed this week: 3', percent: 55, glow: false },
+    ],
+  },
+};
+
+const industry = ref('construction');
+const currentIndustry = computed(() => industries[industry.value]);
 
 const billRows = [
   { name: 'Concrete supplier — batch 4', status: 'Ready to assign', amount: '$12,400.00' },
@@ -48,14 +90,15 @@ const statusStyle = (status) => {
 
 <template>
   <ProjectPageHero
-    eyebrow="Featured Project"
-    title="Moneta — Financial Dashboard"
-    description="A financial dashboard for contractors that tracks bills, invoices, and cash flow across active jobs — built to surface what needs sign-off or follow-up at a glance."
+    :eyebrow="t('portfolio.featuredProject')"
+    :title="t('projects.moneta.title')"
+    :description="t('projects.moneta.description')"
+    :problem-label="t('portfolio.problemLabel')"
+    :problem="t('projects.moneta.problem')"
     :tags="['React', 'Node.js', 'REST API', 'SCSS']"
     accent="#84cc16"
-    bg="#0c0f0a"
   >
-    <BrowserWindow :width="1180" :height="800" url="app.moneta.build/dashboard" tab-title="Moneta">
+    <AppFrame :max-width="1320">
       <div class="ldg">
         <aside class="ldg__rail">
           <div class="ldg__rail-mark">
@@ -98,17 +141,23 @@ const statusStyle = (status) => {
           <div class="ldg__topbar">
             <div>
               <h2 class="ldg__page-title">{{ activeScreen === 'dashboard' ? 'Dashboard' : activeScreen === 'bills' ? 'Bills' : activeScreen === 'invoices' ? 'Invoices' : 'Reports' }}</h2>
-              <div class="ldg__breadcrumb">Financial <span>⌄</span></div>
+              <select v-model="industry" class="ldg__breadcrumb">
+                <option value="construction">Construction</option>
+                <option value="retail">Retail</option>
+                <option value="freelance">Freelance</option>
+                <option value="agency">Agency</option>
+              </select>
             </div>
             <div class="ldg__topbar-spacer"></div>
+            <div class="ldg__module-badge">{{ currentIndustry.label }} module</div>
             <div class="ldg__refresh">↻</div>
             <div class="ldg__avatar"></div>
           </div>
 
           <template v-if="activeScreen === 'dashboard'">
-            <div class="ldg__section-label">Bills</div>
+            <div class="ldg__section-label">{{ currentIndustry.sectionLabel }}</div>
             <div class="ldg__bill-grid">
-              <div v-for="(b, i) in bills" :key="i" class="ldg__card" :class="{ 'ldg__card--glow': b.glow }">
+              <div v-for="(b, i) in currentIndustry.bills" :key="i" class="ldg__card" :class="{ 'ldg__card--glow': b.glow }">
                 <div class="ldg__card-top">
                   <span class="ldg__card-label">{{ b.label }}</span>
                   <div class="ldg__ring" :style="ring(b.percent)">
@@ -205,13 +254,13 @@ const statusStyle = (status) => {
           </template>
         </main>
       </div>
-    </BrowserWindow>
+    </AppFrame>
   </ProjectPageHero>
 </template>
 
 <style lang="scss" scoped>
 .ldg {
-  height: 100%;
+  min-height: 760px;
   display: flex;
   background: #101210;
   font-family: 'Inter', system-ui, sans-serif;
@@ -288,9 +337,21 @@ const statusStyle = (status) => {
   &__topbar { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
 
   &__page-title { font-size: 19px; font-weight: 700; color: #f2f6ef; margin: 0 0 2px; }
-  &__breadcrumb { font-size: 12px; color: #8a9682; span { margin-left: 4px; } }
+
+  &__breadcrumb {
+    font-size: 12px; color: #8a9682; background: none; border: none; padding: 0;
+    font-family: inherit; cursor: pointer;
+    &:focus { outline: none; }
+    option { background: #171a16; color: #f2f6ef; }
+  }
 
   &__topbar-spacer { flex: 1; }
+
+  &__module-badge {
+    padding: 5px 12px; border-radius: 999px; background: rgba(190, 230, 100, 0.12);
+    border: 1px solid rgba(190, 230, 100, 0.3); color: #bef264; font-size: 11.5px; font-weight: 600;
+    margin-right: 4px;
+  }
 
   &__refresh {
     width: 30px; height: 30px; border-radius: 8px; background: #1a1e19; border: 1px solid rgba(190, 230, 100, 0.15);

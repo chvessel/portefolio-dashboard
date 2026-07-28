@@ -1,7 +1,8 @@
 {
   "nav": {
     "home": "Forside",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "back": "Tilbage"
   },
   "language": {
     "label": "Sprog"
@@ -12,14 +13,14 @@
   "hero": {
     "greeting": "Hej, jeg er Carina",
     "role": "Frontend-udvikler",
-    "intro": "Her kan du kigge dig omkring og læse om det arbejde, jeg har lavet. Som frontend-udvikler lever og ånder jeg for UX/UI og brugeroplevelse. Jeg har gjort det til min mission at gøre det så nemt og intuitivt som muligt for brugeren at navigere rundt på platforme.",
+    "intro": "Kig dig endelig omkring — det her er, hvor jeg samler det, jeg har bygget. Jeg er frontend-udvikler med en klar svaghed for UX/UI: jeg kan lide at finde ud af, hvordan en grænseflade kan føles indlysende i stedet for smart. Det betyder, at jeg går lige så meget op i de små ting som det store billede — hvordan en knap føles, når man klikker på den, om en formular rent faktisk fortæller dig, hvad der gik galt, i stedet for bare at råbe 'fejl'. Min baggrund er også en bevidst blanding — jeg startede med en uddannelse som kontorassistent, gik videre til multimediedesign og digital konceptudvikling, og runder det hele af med en uddannelse som webudvikler lige nu. Kort sagt har jeg fået fat i forretningssiden, designsiden og nu kodesiden, hvilket nok er grunden til, at jeg går op i alle tre på samme tid.",
     "readMore": "Læs mere",
     "downloadCv": "Hent CV"
   },
   "home": {
     "featuredTitle": "Udvalgte projekter",
     "aboutTitle": "Om mig",
-    "aboutText": "Frontend-udvikler med speciale i UX/UI. Jeg brænder for at skabe gnidningsfrie digitale grænseflader, hvor funktionalitet møder fejlfrit design. Mit mål er enkelt: at gøre det komplekse ubesværet.",
+    "aboutText": "Frontend-udvikler med en svaghed for UX/UI. Jeg kan godt lide at bygge grænseflader, der rent faktisk virker, som folk forventer — ikke bare noget, der ser godt ud på et screenshot. Simpelt mål: tage noget kompliceret og få det til at føles nemt.",
     "contactTitle": "Kontakt mig",
     "contactCta": "Kontakt mig",
     "contactPitch": "Så står du og mangler en som mig på dit hold, så tøv ikke med at række ud.",
@@ -30,41 +31,49 @@
   "portfolio": {
     "titleMain": "Mit",
     "titleAlt": "arbejde",
-    "description": "En samling af projekter, hvor jeg har kombineret design og kode.",
+    "description": "En håndfuld projekter, hvor jeg har blandet designtænkning med rigtig kode.",
     "viewMore": "Se mere",
     "techLabel": "Teknologier",
-    "considerationsLabel": "Overvejelser"
+    "considerationsLabel": "Overvejelser",
+    "featuredProject": "Udvalgt projekt",
+    "problemLabel": "Problemet"
   },
   "projects": {
     "conversion": {
       "title": "Conversion — realtids marketingdashboard",
-      "description": "Et live overblik til marketingteams, der følger trafik og konverteringer i realtid, sammenligner kampagneresultater på tværs af kanaler og fanger ugyldig trafik og VPN-proxyer, før de skævvrider tallene.",
-      "considerations": "Da hele pointen er at følge tal, der bevæger sig i realtid, holdt jeg layoutet roligt og letlæseligt — tydelige nøgletal og grafer øverst, mens kampagne- og konverteringsdetaljer kun er ét klik væk i stedet for at konkurrere om opmærksomheden på samme skærm."
+      "description": "Et live dashboard til marketingteams — følger trafik og konverteringer i realtid, sammenligner hvordan kampagner klarer sig på tværs af kanaler, og fanger ugyldig trafik og VPN-proxyer, før de roder rundt i tallene.",
+      "considerations": "Hele pointen er jo at følge tal, der bevæger sig live, så jeg holdt layoutet roligt i stedet for at proppe alt ind — nøgletal og grafer øverst til det hurtige overblik, kampagne- og konverteringsdetaljer gemt ét klik væk, så det ikke hele skriger om opmærksomhed på én gang.",
+      "problem": "Marketingteams har som regel deres data spredt ud over fem forskellige værktøjer, så når nogen først opdager, at en kampagne stille og roligt bløder budget til bot-trafik, er pengene allerede væk. Det her samler det hele i ét live overblik, så man opdager det samme dag i stedet for ved månedens udgang."
     },
     "moneta": {
-      "title": "Moneta — Financial Dashboard",
-      "description": "Et finansielt dashboard til håndværkere og entreprenører, der følger bilag, fakturaer og cash flow på tværs af igangværende opgaver — bygget til at vise, hvad der mangler godkendelse eller opfølgning på et øjekast.",
-      "considerations": "Den største udfordring var at få mange tal på skærmen uden at overvælde brugeren, så jeg valgte fremdriftsringe og grafer frem for tabeller, hver gang en tendens betød mere end et præcist tal."
+      "title": "Moneta — modulært finansielt dashboard",
+      "description": "Et finansielt dashboard bygget op omkring udskiftelige moduler, så et byggefirma, en butik, en freelancer og et bureau alle kan sætte det op omkring de tal, der rent faktisk betyder noget for dem — bilag og opgaver for den ene, ordrer og lager for den anden.",
+      "considerations": "Den største udfordring var at få mange tal på én skærm uden det blev til en mur af cifre, så jeg valgte fremdriftsringe og grafer frem for tabeller, hver gang en tendens betød mere end det præcise tal. Og fordi det er bygget som udskiftelige moduler i stedet for ét fast layout, skulle de samme komponenter give mening, uanset om de viste bilag eller ordrer.",
+      "problem": "De fleste finansværktøjer er bygget til én slags forretning, så et byggefirma og en butik ender begge med at kæmpe med de samme stive regnearks-kolonner, der ikke rigtig passer til nogen af dem. Det her bytter modulet ud alt efter branche i stedet for at tvinge alle gennem samme skabelon."
     },
     "ghost": {
-      "title": "Ghost — AI-assistent / LLM",
-      "description": "En LLM-drevet assistent, der forstår forespørgsler i almindeligt sprog og giver brugere øjeblikkelige svar, support og automatiserede opgaver uden at grave sig gennem menuer.",
-      "considerations": "Jeg fokuserede på tydelige indlæsnings- og 'skriver'-tilstande, så ventetiden på et AI-svar aldrig føles som om grænsefladen er gået i stå."
+      "title": "Ghost — smart assistent til arbejdsområdet",
+      "description": "En smart assistent bygget ind i arbejdsområdet — du spørger den om noget i almindeligt sprog, og den giver svar, support-tekster eller klarer små opgaver, uden du først skal grave dig gennem fem menuer.",
+      "considerations": "Jeg brugte faktisk en del tid på indlæsnings- og 'skriver'-tilstandene — der er ikke meget, der dræber tilliden til et værktøj hurtigere, end et svar der tager et sekund for lang tid og bare ser fastfrosset ud i stedet for at arbejde på sagen.",
+      "problem": "Support- og driftsfolk bruger sindssygt meget tid på at grave gamle tråde og dokumenter frem for at svare på spørgsmål, de reelt set har svaret på ti gange før. Det her samler svar, skabeloner og historik ét sted, så folk faktisk kan komme igennem deres indbakke i stedet for at google deres eget produkt igen."
     },
     "mediadeck": {
-      "title": "MediaDeck — overblik over streamingtjenester",
-      "description": "Et dashboard, der samler dine abonnementer, seerhistorik og forbrug på tværs af streamingtjenester i ét overblik, så du hurtigt kan se, hvad du faktisk bruger.",
-      "considerations": "Den sværeste del var at gøre abonnementer, man sjældent tænker over, værd at tjekke ind på, så jeg valgte simple sammenligninger af månedspris og forbrug frem for rå historik."
+      "title": "MediaDeck — overblik over abonnementer",
+      "description": "Samler alle de abonnementer, du betaler for — streaming, lydbøger, e-bøger, musik, produktivitetsværktøjer, det hele — i ét overblik, så du faktisk kan se, hvad du bruger, og hvad der bare stille trækker på kortet.",
+      "considerations": "Den sværeste del var at gøre abonnementer, man aldrig tænker over, værd at tjekke ind på, så jeg grupperede alt efter kategori og holdt det til simple sammenligninger af pris og forbrug i stedet for at hælde rå historik ud over folk.",
+      "problem": "Det er alt for nemt at miste overblikket over, hvad man egentlig betaler for, når abonnementerne er spredt ud over et dusin apps og gemt i mailkvitteringer. Det her samler det hele ét sted, så man rent faktisk kan vurdere, hvad der er værd at beholde."
     },
     "spine": {
       "title": "Spine — boghandel (fysiske bøger, lydbøger & e-bøger)",
-      "description": "En online boghandel, hvor kunder kan browse og købe fysiske bøger, lydbøger og e-bøger fra samme hylde, med formatspecifikke previews og checkout-flows for hver type.",
-      "considerations": "Fysiske bøger, lydbøger og e-bøger kræver hver deres slags produktside — en smagsprøve på et kapitel, en lydprøve, et leveringsestimat — så jeg planlagde layoutet til at tilpasse sig per format i stedet for at proppe alt ind i én generisk skabelon."
+      "description": "En online boghandel, hvor du browser og køber fysiske bøger, lydbøger og e-bøger fra samme hylde, med en preview og checkout, der tilpasser sig det format, du faktisk vil have.",
+      "considerations": "Fysiske bøger, lydbøger og e-bøger vil hver især have deres egen slags produktside — en smagsprøve på et kapitel, en lydprøve, et leveringsestimat — så jeg designede det til rent faktisk at tilpasse sig per format i stedet for at proppe det hele ind i én generisk skabelon og håbe, det passer.",
+      "problem": "At købe bøger online betyder som regel, at man vælger ét format og holder sig til det, selvom de fleste faktisk gerne vil blande det — læse på sofaen, lytte på løbeturen, gøre den færdig på en tablet i toget. Det her behandler en bog som ét produkt med tre formater i stedet for tre separate køb, man skal finde hver for sig."
     },
     "dayframe": {
       "title": "Dayframe — personligt dashboard",
-      "description": "Et personligt kommandocenter til at følge daglige vaner, mål og kalender ét sted, der samler de små målinger, det ellers er nemt at miste overblikket over hver for sig.",
-      "considerations": "Da det er et dashboard til én person frem for et team, prioriterede jeg hurtige daglige overblik og let personalisering frem for tunge rapporter."
+      "description": "Et personligt dashboard til at holde styr på daglige vaner, mål og kalender ét sted — den slags små ting, det er nemt at miste overblikket over, når de er spredt ud over fem forskellige apps.",
+      "considerations": "Fordi det er bygget til én person og ikke et team, gik jeg efter hurtige daglige overblik og lidt personlighed frem for tunge rapporter — ingen har lyst til noget, der ligner et regneark, til deres egen morgenrutine.",
+      "problem": "Personlige produktivitetsapps har det med at sprede din dag ud over fem forskellige apps — én til opgaver, én til vaner, én til noter — så man ender med at skifte kontekst hele dagen bare for at tjekke ind med sig selv. Det her samler de små ting på én skærm i stedet."
     }
   }
 }

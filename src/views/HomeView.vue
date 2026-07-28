@@ -105,6 +105,7 @@ const isContactModalOpen = ref(false);
 .hero {
   padding: 0 4rem 0 4rem;
   min-height: 50vh;
+  margin-bottom: 4rem;
   display: flex;
   align-items: center;
 
@@ -137,7 +138,7 @@ const isContactModalOpen = ref(false);
     color: $color-text-muted;
     line-height: 1.7;
     margin-bottom: 2rem;
-    max-width: 500px;
+    max-width: 620px;
   }
 
   &__actions {

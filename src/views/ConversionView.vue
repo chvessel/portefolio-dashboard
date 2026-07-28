@@ -1,6 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue';
-import BrowserWindow from '@/components/browser/BrowserWindow.vue';
+import { useI18n } from 'vue-i18n';
+import ProjectPageHero from '@/components/project/ProjectPageHero.vue';
+import AppFrame from '@/components/project/AppFrame.vue';
+
+const { t } = useI18n();
 
 const activeScreen = ref('dashboard');
 const goto = (screen) => { activeScreen.value = screen; };
@@ -75,323 +79,237 @@ const alerts = computed(() =>
 </script>
 
 <template>
-  <main class="datanest-page">
-    <header class="datanest-page__hero">
-      <div class="datanest-page__eyebrow">
-        <span class="datanest-page__eyebrow-dot"></span>
-        <span>Featured Project</span>
+  <ProjectPageHero
+    :eyebrow="t('portfolio.featuredProject')"
+    :title="t('projects.conversion.title')"
+    :description="t('projects.conversion.description')"
+    :problem-label="t('portfolio.problemLabel')"
+    :problem="t('projects.conversion.problem')"
+    :tags="['Product & UI Design', 'React', 'Next.js', 'Node.js', 'REST API']"
+    accent="#7c5cff"
+  >
+    <AppFrame :max-width="1320">
+      <div class="dn">
+        <aside class="dn__sidebar">
+          <div class="dn__brand">
+            <div class="dn__brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l1.5-5h15L21 9" />
+                <path d="M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0" />
+                <path d="M5 9v10h14V9" />
+                <path d="M9 19v-6h6v6" />
+              </svg>
+            </div>
+            <div class="dn__brand-name">Conversion</div>
+          </div>
+
+          <nav class="dn__nav">
+            <div class="dn__nav-item" :style="navStyle('dashboard')" @click="goto('dashboard')">
+              <div class="dn__icon-grid">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span>Dashboard</span>
+            </div>
+            <div class="dn__nav-item" :style="navStyle('analytics')" @click="goto('analytics')">
+              <div class="dn__icon-bars">
+                <span class="dn__icon-bar dn__icon-bar--sm"></span>
+                <span class="dn__icon-bar dn__icon-bar--lg"></span>
+                <span class="dn__icon-bar dn__icon-bar--md"></span>
+              </div>
+              <span>Analytics</span>
+            </div>
+            <div class="dn__nav-item" :style="navStyle('performance')" @click="goto('performance')">
+              <div class="dn__icon-triangle"></div>
+              <span>Performance</span>
+            </div>
+            <div class="dn__nav-item" :style="navStyle('conversion')" @click="goto('conversion')">
+              <div class="dn__icon-lines">
+                <span style="opacity: 0.5"></span>
+                <span style="opacity: 0.75"></span>
+                <span></span>
+              </div>
+              <span>Conversion List</span>
+            </div>
+            <div class="dn__nav-item" :style="navStyle('alerts')" @click="goto('alerts')">
+              <div class="dn__icon-bell"></div>
+              <span>Alerts</span>
+            </div>
+            <div class="dn__nav-item" :style="navStyle('settings')" @click="goto('settings')">
+              <div class="dn__icon-circle"></div>
+              <span>Settings</span>
+            </div>
+
+            <div class="dn__channels-label">Channels</div>
+            <div class="dn__channel">
+              <div class="dn__icon-square"></div>
+              <span>Instagram</span>
+            </div>
+            <div class="dn__channel">
+              <div class="dn__icon-circle-outline"></div>
+              <span>Facebook</span>
+            </div>
+            <div class="dn__channel">
+              <div class="dn__icon-circle-outline"></div>
+              <span>Google</span>
+            </div>
+          </nav>
+
+          <div class="dn__upgrade">
+            <div class="dn__upgrade-text">Get detailed analytics for helping you, get pro</div>
+            <div class="dn__upgrade-btn">Upgrade Plan</div>
+          </div>
+        </aside>
+
+        <main class="dn__main">
+          <div class="dn__topbar">
+            <div class="dn__search">
+              <div class="dn__search-icon"></div>
+              <span>Search</span>
+            </div>
+            <div class="dn__topbar-spacer"></div>
+            <div class="dn__live-badge">
+              <span class="dn__live-dot"></span>
+              <span>Live</span>
+            </div>
+            <div class="dn__topbar-actions">
+              <div class="dn__topbar-btn"></div>
+              <div class="dn__topbar-btn"></div>
+              <div class="dn__topbar-btn"></div>
+              <div class="dn__avatar"></div>
+              <div>
+                <div class="dn__user-name">John Abraham</div>
+                <div class="dn__user-email">uirahamat098@gmail.com</div>
+              </div>
+            </div>
+          </div>
+
+          <template v-if="activeScreen === 'dashboard'">
+            <h2 class="dn__section-title dn__section-title--block">Overview</h2>
+            <div class="dn__stat-grid">
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Visitors</div>
+                <div class="dn__stat-value">48,204</div>
+                <div class="dn__stat-delta dn__stat-delta--up">+9.4%</div>
+              </div>
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Conversions</div>
+                <div class="dn__stat-value">2,318</div>
+                <div class="dn__stat-delta dn__stat-delta--up">+4.1%</div>
+              </div>
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Bounce Rate</div>
+                <div class="dn__stat-value">38.2%</div>
+                <div class="dn__stat-delta dn__stat-delta--down">+1.2%</div>
+              </div>
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Invalid Traffic</div>
+                <div class="dn__stat-value">6.8%</div>
+                <div class="dn__stat-delta dn__stat-delta--down">Flagged</div>
+              </div>
+            </div>
+
+            <div class="dn__panels">
+              <div class="dn__panel">
+                <div class="dn__panel-label">Traffic Trend — 7 Days</div>
+                <div class="dn__chart">
+                  <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 52px"></div><span>Mon</span></div>
+                  <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 78px"></div><span>Tue</span></div>
+                  <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 64px"></div><span>Wed</span></div>
+                  <div class="dn__chart-col"><div class="dn__chart-bar dn__chart-bar--accent" style="height: 100px"></div><span>Thu</span></div>
+                  <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 88px"></div><span>Fri</span></div>
+                  <div class="dn__chart-col"><div class="dn__chart-bar dn__chart-bar--accent" style="height: 112px"></div><span>Sat</span></div>
+                  <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 70px"></div><span>Sun</span></div>
+                </div>
+              </div>
+              <div class="dn__panel">
+                <div class="dn__panel-label">Traffic Sources</div>
+                <div class="dn__donut-wrap">
+                  <div class="dn__donut"></div>
+                </div>
+                <div class="dn__legend">
+                  <div class="dn__legend-item"><span class="dn__legend-dot dn__legend-dot--primary"></span>Instagram<span class="dn__legend-pct">45%</span></div>
+                  <div class="dn__legend-item"><span class="dn__legend-dot dn__legend-dot--secondary"></span>Google<span class="dn__legend-pct">25%</span></div>
+                  <div class="dn__legend-item"><span class="dn__legend-dot dn__legend-dot--tertiary"></span>Facebook<span class="dn__legend-pct">30%</span></div>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template v-else-if="activeScreen === 'analytics'">
+            <h2 class="dn__section-title dn__section-title--block">Analytics</h2>
+            <div class="dn__table-panel">
+              <div class="dn__panel-label">Top Campaigns by Conversion</div>
+              <div class="dn__table-head dn__table-head--campaigns">
+                <div>Campaign</div><div>Clicks</div><div>Conversions</div><div>CTR</div>
+              </div>
+              <div v-for="(c, i) in campaigns" :key="i" class="dn__table-row dn__table-row--campaigns">
+                <div>{{ c.name }}</div><div>{{ c.clicks }}</div><div>{{ c.conversions }}</div>
+                <div class="dn__table-ctr">{{ c.ctr }}</div>
+              </div>
+            </div>
+          </template>
+
+          <template v-else-if="activeScreen === 'conversion'">
+            <h2 class="dn__section-title dn__section-title--block">Conversion List</h2>
+            <div class="dn__table-panel">
+              <div class="dn__table-head dn__table-head--conversions">
+                <div>Date</div><div>Channel</div><div>Campaign</div><div>Value</div><div>Status</div>
+              </div>
+              <div v-for="(c, i) in conversions" :key="i" class="dn__table-row dn__table-row--conversions">
+                <div class="dn__table-dim">{{ c.date }}</div><div>{{ c.channel }}</div><div>{{ c.campaign }}</div><div>{{ c.value }}</div>
+                <div><span :style="c.statusStyle">{{ c.status }}</span></div>
+              </div>
+            </div>
+          </template>
+
+          <template v-else-if="activeScreen === 'alerts'">
+            <h2 class="dn__section-title dn__section-title--block">Alerts</h2>
+            <div class="dn__alerts">
+              <div v-for="(a, i) in alerts" :key="i" class="dn__alert">
+                <div :style="a.dotStyle"></div>
+                <div class="dn__alert-body">
+                  <div class="dn__alert-title">{{ a.title }}</div>
+                  <div class="dn__alert-detail">{{ a.detail }}</div>
+                </div>
+                <div class="dn__alert-time">{{ a.time }}</div>
+              </div>
+            </div>
+          </template>
+
+          <template v-else-if="activeScreen === 'performance'">
+            <h2 class="dn__section-title dn__section-title--block">Performance</h2>
+            <div class="dn__perf-grid">
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Avg. Response Time</div>
+                <div class="dn__stat-value">312ms</div>
+              </div>
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Uptime</div>
+                <div class="dn__stat-value dn__stat-value--accent">99.98%</div>
+              </div>
+              <div class="dn__stat-card">
+                <div class="dn__stat-label">Queries Today</div>
+                <div class="dn__stat-value">14,209</div>
+              </div>
+            </div>
+          </template>
+
+          <template v-else-if="activeScreen === 'settings'">
+            <h2 class="dn__section-title dn__section-title--block">Settings</h2>
+            <div class="dn__settings-list">
+              <div class="dn__settings-row"><span>Profile &amp; account</span><span>›</span></div>
+              <div class="dn__settings-row"><span>Notifications</span><span>›</span></div>
+              <div class="dn__settings-row"><span>API keys</span><span>›</span></div>
+              <div class="dn__settings-row"><span>Connected channels</span><span>›</span></div>
+            </div>
+          </template>
+        </main>
       </div>
-      <h1 class="datanest-page__title">Conversion — Real-Time Marketing Dashboard</h1>
-      <p class="datanest-page__description">
-        A live overview for marketing teams — watch traffic and conversions update in real time,
-        track campaign performance across channels, and catch invalid traffic and VPN proxies
-        before they skew the numbers.
-      </p>
-      <div class="datanest-page__tags">
-        <span class="datanest-page__tag">Product &amp; UI Design</span>
-        <span class="datanest-page__tag">React</span>
-        <span class="datanest-page__tag">Next.js</span>
-        <span class="datanest-page__tag">Node.js</span>
-        <span class="datanest-page__tag">REST API</span>
-      </div>
-    </header>
-
-    <div class="datanest-page__window-wrap">
-      <BrowserWindow :width="1180" :height="800" url="app.conversion.io/dashboard" tab-title="Conversion">
-        <div class="dn">
-          <aside class="dn__sidebar">
-            <div class="dn__brand">
-              <div class="dn__brand-mark">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 9l1.5-5h15L21 9" />
-                  <path d="M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0" />
-                  <path d="M5 9v10h14V9" />
-                  <path d="M9 19v-6h6v6" />
-                </svg>
-              </div>
-              <div class="dn__brand-name">Conversion</div>
-            </div>
-
-            <nav class="dn__nav">
-              <div class="dn__nav-item" :style="navStyle('dashboard')" @click="goto('dashboard')">
-                <div class="dn__icon-grid">
-                  <span></span><span></span><span></span><span></span>
-                </div>
-                <span>Dashboard</span>
-              </div>
-              <div class="dn__nav-item" :style="navStyle('analytics')" @click="goto('analytics')">
-                <div class="dn__icon-bars">
-                  <span class="dn__icon-bar dn__icon-bar--sm"></span>
-                  <span class="dn__icon-bar dn__icon-bar--lg"></span>
-                  <span class="dn__icon-bar dn__icon-bar--md"></span>
-                </div>
-                <span>Analytics</span>
-              </div>
-              <div class="dn__nav-item" :style="navStyle('performance')" @click="goto('performance')">
-                <div class="dn__icon-triangle"></div>
-                <span>Performance</span>
-              </div>
-              <div class="dn__nav-item" :style="navStyle('conversion')" @click="goto('conversion')">
-                <div class="dn__icon-lines">
-                  <span style="opacity: 0.5"></span>
-                  <span style="opacity: 0.75"></span>
-                  <span></span>
-                </div>
-                <span>Conversion List</span>
-              </div>
-              <div class="dn__nav-item" :style="navStyle('alerts')" @click="goto('alerts')">
-                <div class="dn__icon-bell"></div>
-                <span>Alerts</span>
-              </div>
-              <div class="dn__nav-item" :style="navStyle('settings')" @click="goto('settings')">
-                <div class="dn__icon-circle"></div>
-                <span>Settings</span>
-              </div>
-
-              <div class="dn__channels-label">Channels</div>
-              <div class="dn__channel">
-                <div class="dn__icon-square"></div>
-                <span>Instagram</span>
-              </div>
-              <div class="dn__channel">
-                <div class="dn__icon-circle-outline"></div>
-                <span>Facebook</span>
-              </div>
-              <div class="dn__channel">
-                <div class="dn__icon-circle-outline"></div>
-                <span>Google</span>
-              </div>
-            </nav>
-
-            <div class="dn__upgrade">
-              <div class="dn__upgrade-text">Get detailed analytics for helping you, get pro</div>
-              <div class="dn__upgrade-btn">Upgrade Plan</div>
-            </div>
-          </aside>
-
-          <main class="dn__main">
-            <div class="dn__topbar">
-              <div class="dn__search">
-                <div class="dn__search-icon"></div>
-                <span>Search</span>
-              </div>
-              <div class="dn__topbar-spacer"></div>
-              <div class="dn__live-badge">
-                <span class="dn__live-dot"></span>
-                <span>Live</span>
-              </div>
-              <div class="dn__topbar-actions">
-                <div class="dn__topbar-btn"></div>
-                <div class="dn__topbar-btn"></div>
-                <div class="dn__topbar-btn"></div>
-                <div class="dn__avatar"></div>
-                <div>
-                  <div class="dn__user-name">John Abraham</div>
-                  <div class="dn__user-email">uirahamat098@gmail.com</div>
-                </div>
-              </div>
-            </div>
-
-            <template v-if="activeScreen === 'dashboard'">
-              <h2 class="dn__section-title dn__section-title--block">Overview</h2>
-              <div class="dn__stat-grid">
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Visitors</div>
-                  <div class="dn__stat-value">48,204</div>
-                  <div class="dn__stat-delta dn__stat-delta--up">+9.4%</div>
-                </div>
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Conversions</div>
-                  <div class="dn__stat-value">2,318</div>
-                  <div class="dn__stat-delta dn__stat-delta--up">+4.1%</div>
-                </div>
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Bounce Rate</div>
-                  <div class="dn__stat-value">38.2%</div>
-                  <div class="dn__stat-delta dn__stat-delta--down">+1.2%</div>
-                </div>
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Invalid Traffic</div>
-                  <div class="dn__stat-value">6.8%</div>
-                  <div class="dn__stat-delta dn__stat-delta--down">Flagged</div>
-                </div>
-              </div>
-
-              <div class="dn__panels">
-                <div class="dn__panel">
-                  <div class="dn__panel-label">Traffic Trend — 7 Days</div>
-                  <div class="dn__chart">
-                    <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 52px"></div><span>Mon</span></div>
-                    <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 78px"></div><span>Tue</span></div>
-                    <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 64px"></div><span>Wed</span></div>
-                    <div class="dn__chart-col"><div class="dn__chart-bar dn__chart-bar--accent" style="height: 100px"></div><span>Thu</span></div>
-                    <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 88px"></div><span>Fri</span></div>
-                    <div class="dn__chart-col"><div class="dn__chart-bar dn__chart-bar--accent" style="height: 112px"></div><span>Sat</span></div>
-                    <div class="dn__chart-col"><div class="dn__chart-bar" style="height: 70px"></div><span>Sun</span></div>
-                  </div>
-                </div>
-                <div class="dn__panel">
-                  <div class="dn__panel-label">Traffic Sources</div>
-                  <div class="dn__donut-wrap">
-                    <div class="dn__donut"></div>
-                  </div>
-                  <div class="dn__legend">
-                    <div class="dn__legend-item"><span class="dn__legend-dot dn__legend-dot--primary"></span>Instagram<span class="dn__legend-pct">45%</span></div>
-                    <div class="dn__legend-item"><span class="dn__legend-dot dn__legend-dot--secondary"></span>Google<span class="dn__legend-pct">25%</span></div>
-                    <div class="dn__legend-item"><span class="dn__legend-dot dn__legend-dot--tertiary"></span>Facebook<span class="dn__legend-pct">30%</span></div>
-                  </div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else-if="activeScreen === 'analytics'">
-              <h2 class="dn__section-title dn__section-title--block">Analytics</h2>
-              <div class="dn__table-panel">
-                <div class="dn__panel-label">Top Campaigns by Conversion</div>
-                <div class="dn__table-head dn__table-head--campaigns">
-                  <div>Campaign</div><div>Clicks</div><div>Conversions</div><div>CTR</div>
-                </div>
-                <div v-for="(c, i) in campaigns" :key="i" class="dn__table-row dn__table-row--campaigns">
-                  <div>{{ c.name }}</div><div>{{ c.clicks }}</div><div>{{ c.conversions }}</div>
-                  <div class="dn__table-ctr">{{ c.ctr }}</div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else-if="activeScreen === 'conversion'">
-              <h2 class="dn__section-title dn__section-title--block">Conversion List</h2>
-              <div class="dn__table-panel">
-                <div class="dn__table-head dn__table-head--conversions">
-                  <div>Date</div><div>Channel</div><div>Campaign</div><div>Value</div><div>Status</div>
-                </div>
-                <div v-for="(c, i) in conversions" :key="i" class="dn__table-row dn__table-row--conversions">
-                  <div class="dn__table-dim">{{ c.date }}</div><div>{{ c.channel }}</div><div>{{ c.campaign }}</div><div>{{ c.value }}</div>
-                  <div><span :style="c.statusStyle">{{ c.status }}</span></div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else-if="activeScreen === 'alerts'">
-              <h2 class="dn__section-title dn__section-title--block">Alerts</h2>
-              <div class="dn__alerts">
-                <div v-for="(a, i) in alerts" :key="i" class="dn__alert">
-                  <div :style="a.dotStyle"></div>
-                  <div class="dn__alert-body">
-                    <div class="dn__alert-title">{{ a.title }}</div>
-                    <div class="dn__alert-detail">{{ a.detail }}</div>
-                  </div>
-                  <div class="dn__alert-time">{{ a.time }}</div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else-if="activeScreen === 'performance'">
-              <h2 class="dn__section-title dn__section-title--block">Performance</h2>
-              <div class="dn__perf-grid">
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Avg. Response Time</div>
-                  <div class="dn__stat-value">312ms</div>
-                </div>
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Uptime</div>
-                  <div class="dn__stat-value dn__stat-value--accent">99.98%</div>
-                </div>
-                <div class="dn__stat-card">
-                  <div class="dn__stat-label">Queries Today</div>
-                  <div class="dn__stat-value">14,209</div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else-if="activeScreen === 'settings'">
-              <h2 class="dn__section-title dn__section-title--block">Settings</h2>
-              <div class="dn__settings-list">
-                <div class="dn__settings-row"><span>Profile &amp; account</span><span>›</span></div>
-                <div class="dn__settings-row"><span>Notifications</span><span>›</span></div>
-                <div class="dn__settings-row"><span>API keys</span><span>›</span></div>
-                <div class="dn__settings-row"><span>Connected channels</span><span>›</span></div>
-              </div>
-            </template>
-          </main>
-        </div>
-      </BrowserWindow>
-    </div>
-  </main>
+    </AppFrame>
+  </ProjectPageHero>
 </template>
 
 <style lang="scss" scoped>
-.datanest-page {
-  min-height: 100vh;
-  padding: 72px 5vw 96px;
-  box-sizing: border-box;
-  background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(124, 92, 255, 0.16), transparent),
-    #0a0912;
-  font-family: 'Inter', system-ui, sans-serif;
-
-  &__hero {
-    max-width: 1180px;
-    margin: 0 auto 44px;
-  }
-
-  &__eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 18px;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #9b98a3;
-    font-weight: 600;
-  }
-
-  &__eyebrow-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #7c5cff;
-  }
-
-  &__title {
-    margin: 0 0 14px;
-    font-size: 42px;
-    line-height: 1.1;
-    color: #f5f3f7;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-
-  &__description {
-    margin: 0 0 24px;
-    max-width: 640px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #b3b0bb;
-  }
-
-  &__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  &__tag {
-    padding: 6px 14px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.04);
-    color: #d6d4dd;
-    font-size: 13px;
-  }
-
-  &__window-wrap {
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-  }
-}
-
 @keyframes dn-pulse {
   0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
   70% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
@@ -399,7 +317,7 @@ const alerts = computed(() =>
 }
 
 .dn {
-  height: 100%;
+  min-height: 760px;
   display: flex;
   background: #141221;
   font-family: 'Inter', system-ui, sans-serif;

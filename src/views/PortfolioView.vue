@@ -53,9 +53,9 @@ const { t } = useI18n();
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
   }
 }

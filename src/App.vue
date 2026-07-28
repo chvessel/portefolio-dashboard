@@ -1,10 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import SiteLogo from '@/components/nav/SiteLogo.vue'
 import LanguageSwitch from '@/components/nav/LanguageSwitch.vue'
 
 const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
 </script>
 
 <template>
@@ -21,6 +23,12 @@ const { t } = useI18n()
       </nav>
     </div>
   </header>
+
+  <div v-if="route.path !== '/'" class="back-bar">
+    <button type="button" class="back-bar__btn" @click="router.back()">
+      <span class="back-bar__arrow">←</span>{{ t('nav.back') }}
+    </button>
+  </div>
 
   <RouterView />
 </template>
@@ -60,6 +68,7 @@ body {
   padding: 1.25rem;
   font-family: sans-serif;
   letter-spacing: 3px;
+  font-size: 1.4rem;
   &__list {
     display: flex;
     list-style: none;
@@ -69,6 +78,33 @@ body {
     color: rgb(125, 125, 125);
     text-decoration: none;
     &.router-link-active { color: $color-primary; }
+  }
+}
+
+.back-bar {
+  padding: 0 3rem;
+  margin-bottom: 1rem;
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(150, 150, 150);
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+    transition: $transition-base;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &__arrow {
+    font-size: 1.1rem;
   }
 }
 

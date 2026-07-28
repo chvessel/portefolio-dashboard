@@ -99,7 +99,7 @@ defineProps({
 
   &__description {
     color: #818181;
-    font-size: 0.85rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 1rem;
   }

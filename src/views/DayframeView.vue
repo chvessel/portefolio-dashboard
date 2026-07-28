@@ -1,7 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue';
-import BrowserWindow from '@/components/browser/BrowserWindow.vue';
+import { useI18n } from 'vue-i18n';
 import ProjectPageHero from '@/components/project/ProjectPageHero.vue';
+import AppFrame from '@/components/project/AppFrame.vue';
+
+const { t } = useI18n();
 
 const tasks = ref([
   { title: 'Review Codebase', status: 'done' },
@@ -39,14 +42,15 @@ const analyticsStats = [
 
 <template>
   <ProjectPageHero
-    eyebrow="Featured Project"
-    title="Dayframe — Personal Dashboard"
-    description="A personal command center for tracking daily habits, goals, and schedule in one place, pulling together the small metrics that are easy to lose track of individually."
+    :eyebrow="t('portfolio.featuredProject')"
+    :title="t('projects.dayframe.title')"
+    :description="t('projects.dayframe.description')"
+    :problem-label="t('portfolio.problemLabel')"
+    :problem="t('projects.dayframe.problem')"
     :tags="['React', 'JS', 'SCSS', 'REST API']"
     accent="#f5b942"
-    bg="#0d0f14"
   >
-    <BrowserWindow :width="1100" :height="720" url="app.dayframe.me" tab-title="Dayframe">
+    <AppFrame :max-width="1200">
       <div class="pd">
         <header class="pd__topbar">
           <div class="pd__brand">
@@ -137,13 +141,13 @@ const analyticsStats = [
           </div>
         </main>
       </div>
-    </BrowserWindow>
+    </AppFrame>
   </ProjectPageHero>
 </template>
 
 <style lang="scss" scoped>
 .pd {
-  height: 100%;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   background: #12151d;

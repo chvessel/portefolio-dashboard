@@ -1,7 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import BrowserWindow from '@/components/browser/BrowserWindow.vue';
+import { useI18n } from 'vue-i18n';
 import ProjectPageHero from '@/components/project/ProjectPageHero.vue';
+import AppFrame from '@/components/project/AppFrame.vue';
+
+const { t } = useI18n();
 
 const activeScreen = ref('chat');
 const goto = (screen) => { activeScreen.value = screen; };
@@ -48,23 +51,24 @@ const promptItems = [
   { title: 'Compare options', desc: 'Lay out trade-offs in a short table' },
 ];
 
-const models = [
-  { name: 'Ghost Pro', desc: 'Best for complex, multi-step reasoning', selected: true },
-  { name: 'Ghost Fast', desc: 'Optimized for quick, everyday answers', selected: false },
-  { name: 'Ghost Vision', desc: 'Understands images alongside text', selected: false },
+const responseModes = [
+  { name: 'Focused', desc: 'Short, precise answers for quick questions', selected: true },
+  { name: 'Balanced', desc: 'A mix of speed and detail for everyday use', selected: false },
+  { name: 'Thorough', desc: 'Best for complex, multi-step questions', selected: false },
 ];
 </script>
 
 <template>
   <ProjectPageHero
-    eyebrow="Featured Project"
-    title="Ghost — AI Assistant / LLM"
-    description="An LLM-powered assistant that understands natural language requests and gives users instant answers, support, and automated task handling without digging through menus."
+    :eyebrow="t('portfolio.featuredProject')"
+    :title="t('projects.ghost.title')"
+    :description="t('projects.ghost.description')"
+    :problem-label="t('portfolio.problemLabel')"
+    :problem="t('projects.ghost.problem')"
     :tags="['Vue3.js', 'Node.js', 'REST API', 'JS']"
     accent="#14b8a6"
-    bg="#0a1210"
   >
-    <BrowserWindow :width="1180" :height="800" url="app.ghost.ai/chat" tab-title="Ghost">
+    <AppFrame :max-width="1320">
       <div class="cx">
         <aside class="cx__sidebar">
           <div class="cx__brand">
@@ -94,7 +98,7 @@ const models = [
               <div class="cx__icon-grid">
                 <span></span><span></span><span></span><span></span>
               </div>
-              <span>Prompt Library</span>
+              <span>Templates</span>
             </div>
             <div class="cx__nav-item" :style="navStyle('settings')" @click="goto('settings')">
               <div class="cx__icon-circle"></div>
@@ -105,14 +109,17 @@ const models = [
           <div class="cx__usage">
             <div class="cx__usage-label">Monthly usage</div>
             <div class="cx__usage-bar"><div class="cx__usage-fill"></div></div>
-            <div class="cx__usage-value">6,420 / 10,000 tokens</div>
+            <div class="cx__usage-value">6,420 / 10,000 messages</div>
           </div>
         </aside>
 
         <main class="cx__main">
           <template v-if="activeScreen === 'chat'">
             <div class="cx__chat-header">
-              <div class="cx__model-pill">Ghost Pro</div>
+              <div class="cx__status-pill">
+                <span class="cx__status-dot"></span>
+                <span>Active</span>
+              </div>
               <div class="cx__section-actions">
                 <div class="cx__btn cx__btn--ghost">Share</div>
                 <div class="cx__btn cx__btn--solid">Export</div>
@@ -131,7 +138,7 @@ const models = [
                 v-model="draft"
                 class="cx__composer-input"
                 type="text"
-                placeholder="Ask Ghost anything..."
+                placeholder="Ask a question or describe what you need..."
               />
               <div class="cx__composer-send">↑</div>
             </div>
@@ -152,7 +159,7 @@ const models = [
           </template>
 
           <template v-else-if="activeScreen === 'prompts'">
-            <h2 class="cx__section-title cx__section-title--block">Prompt Library</h2>
+            <h2 class="cx__section-title cx__section-title--block">Templates</h2>
             <div class="cx__prompt-grid">
               <div v-for="(p, i) in promptItems" :key="i" class="cx__prompt-card">
                 <div class="cx__prompt-title">{{ p.title }}</div>
@@ -164,9 +171,9 @@ const models = [
           <template v-else-if="activeScreen === 'settings'">
             <h2 class="cx__section-title cx__section-title--block">Settings</h2>
 
-            <div class="cx__settings-label">Model</div>
+            <div class="cx__settings-label">Response mode</div>
             <div class="cx__model-list">
-              <div v-for="(m, i) in models" :key="i" class="cx__model-row">
+              <div v-for="(m, i) in responseModes" :key="i" class="cx__model-row">
                 <div class="cx__radio" :class="{ 'cx__radio--active': m.selected }"></div>
                 <div class="cx__model-body">
                   <div class="cx__model-name">{{ m.name }}</div>
@@ -179,18 +186,18 @@ const models = [
             <div class="cx__slider-track"><div class="cx__slider-fill"></div><div class="cx__slider-thumb"></div></div>
             <div class="cx__slider-labels"><span>Precise</span><span>Creative</span></div>
 
-            <div class="cx__settings-label">API key</div>
-            <div class="cx__key-field">sk-ghost-••••••••••••3f9a</div>
+            <div class="cx__settings-label">Connected inbox</div>
+            <div class="cx__key-field">support@yourcompany.com</div>
           </template>
         </main>
       </div>
-    </BrowserWindow>
+    </AppFrame>
   </ProjectPageHero>
 </template>
 
 <style lang="scss" scoped>
 .cx {
-  height: 100%;
+  min-height: 760px;
   display: flex;
   background: #0f1715;
   font-family: 'Inter', system-ui, sans-serif;
@@ -359,14 +366,24 @@ const models = [
     margin-bottom: 20px;
   }
 
-  &__model-pill {
+  &__status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(20, 184, 166, 0.12);
-    border: 1px solid rgba(20, 184, 166, 0.3);
-    color: #5eead4;
+    background: rgba(52, 211, 153, 0.12);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #34d399;
     font-size: 12.5px;
     font-weight: 600;
+  }
+
+  &__status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
   }
 
   &__section-actions {
