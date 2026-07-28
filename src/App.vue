@@ -82,29 +82,38 @@ body {
 }
 
 .back-bar {
-  padding: 0 3rem;
-  margin-bottom: 1rem;
+  padding: 0 5rem;
+  margin-bottom: 1.5rem;
 
   &__btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
     cursor: pointer;
     color: rgb(150, 150, 150);
     font-family: sans-serif;
-    font-size: 0.95rem;
-    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1.15rem;
     transition: $transition-base;
 
     &:hover {
       color: $color-white;
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.18);
+
+      .back-bar__arrow {
+        transform: translateX(-3px);
+      }
     }
   }
 
   &__arrow {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
   }
 }
 
@@ -117,6 +126,9 @@ body {
   .nav {
     padding: 0;
     gap: 1.5rem;
+  }
+  .back-bar {
+    padding: 0 1.5rem;
   }
 }
 </style>
