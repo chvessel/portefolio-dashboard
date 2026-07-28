@@ -28,7 +28,6 @@ const isContactModalOpen = ref(false);
           <h2 class="hero__subtitle">{{ t('hero.role') }}</h2>
           <p class="hero__text">{{ t('hero.intro') }}</p>
           <div class="hero__actions">
-            <ActionButton>{{ t('hero.readMore') }}</ActionButton>
             <ActionButton href="/cv/Carina-Vessel-CV.pdf" download class="hero__cv-btn">
               {{ t('hero.downloadCv') }}
             </ActionButton>
@@ -118,7 +117,7 @@ const isContactModalOpen = ref(false);
   }
 
   &__content {
-    flex: 0.9;
+    flex: 1.15;
   }
 
   &__title {
@@ -138,7 +137,7 @@ const isContactModalOpen = ref(false);
     color: $color-text-muted;
     line-height: 1.7;
     margin-bottom: 2rem;
-    max-width: 620px;
+    max-width: 760px;
   }
 
   &__actions {
@@ -158,7 +157,7 @@ const isContactModalOpen = ref(false);
   }
 
   &__visual {
-    flex: 1.6;
+    flex: 1.35;
   }
 
   &__figure {

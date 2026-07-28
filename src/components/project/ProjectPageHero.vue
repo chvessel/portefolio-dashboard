@@ -124,7 +124,9 @@ defineProps({
 
   &__window-wrap {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
     overflow-x: auto;
   }
 }

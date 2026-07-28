@@ -13,8 +13,7 @@
   "hero": {
     "greeting": "Hi, I'm Carina",
     "role": "Frontend Developer",
-    "intro": "Take a look around — this is where I collect the stuff I've built. I'm a frontend developer with a pretty clear soft spot for UX/UI: I like figuring out how to make an interface feel obvious instead of clever. That means caring about the small stuff as much as the big picture — how a button feels when you click it, whether a form actually tells you what went wrong instead of just yelling 'error' at you. My background's a mix on purpose, too — I started out training as an office assistant, then moved into multimedia design and digital concept development, and I'm currently rounding it off with a web developer degree. Basically I picked up the business side, the design side, and now the code side, which is probably why I end up caring about all three at once.",
-    "readMore": "Read more",
+    "intro": "I'm a frontend developer with a clear soft spot for UX/UI. I care about making an interface feel obvious instead of clever, from the big picture down to the small stuff: how a button feels when you click it, or whether a form actually tells you what went wrong. My background is a deliberate mix of business, design and code. I started out training as an office assistant, moved into multimedia design and digital concept development, and I'm currently rounding it off with a web developer degree.",
     "downloadCv": "Download CV"
   },
   "home": {

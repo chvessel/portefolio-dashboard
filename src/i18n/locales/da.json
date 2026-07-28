@@ -13,8 +13,7 @@
   "hero": {
     "greeting": "Hej, jeg er Carina",
     "role": "Frontend-udvikler",
-    "intro": "Kig dig endelig omkring — det her er, hvor jeg samler det, jeg har bygget. Jeg er frontend-udvikler med en klar svaghed for UX/UI: jeg kan lide at finde ud af, hvordan en grænseflade kan føles indlysende i stedet for smart. Det betyder, at jeg går lige så meget op i de små ting som det store billede — hvordan en knap føles, når man klikker på den, om en formular rent faktisk fortæller dig, hvad der gik galt, i stedet for bare at råbe 'fejl'. Min baggrund er også en bevidst blanding — jeg startede med en uddannelse som kontorassistent, gik videre til multimediedesign og digital konceptudvikling, og runder det hele af med en uddannelse som webudvikler lige nu. Kort sagt har jeg fået fat i forretningssiden, designsiden og nu kodesiden, hvilket nok er grunden til, at jeg går op i alle tre på samme tid.",
-    "readMore": "Læs mere",
+    "intro": "Jeg er frontend-udvikler med en klar svaghed for UX/UI. Jeg går op i, hvordan en grænseflade kan føles indlysende i stedet for bare smart, både i det store billede og i detaljerne: hvordan en knap føles, når man klikker på den, og om en formular rent faktisk fortæller dig, hvad der gik galt. Min baggrund er en bevidst blanding af forretning, design og kode. Jeg startede som kontorassistent, gik videre til multimediedesign og digital konceptudvikling, og runder nu af med en uddannelse som webudvikler.",
     "downloadCv": "Hent CV"
   },
   "home": {
