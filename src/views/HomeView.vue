@@ -68,7 +68,7 @@ const isContactModalOpen = ref(false);
 
           <div class="sidebar__section">
             <h3 class="sidebar__title">{{ t('home.contactTitle') }}</h3>
-            <ActionButton class="contact-block__cta" @click="isContactModalOpen = true">
+            <ActionButton class="sidebar__cta" @click="isContactModalOpen = true">
               {{ t('home.contactCta') }}
             </ActionButton>
           </div>

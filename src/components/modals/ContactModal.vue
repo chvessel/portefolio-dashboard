@@ -22,8 +22,8 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
 
 <template>
   <Teleport to="body">
-    <div class="modal-backdrop" @click.self="emit('close')">
-      <div class="modal" role="dialog" aria-modal="true" :aria-label="t('home.contactTitle')">
+    <div class="modal__backdrop" @click.self="emit('close')">
+      <div class="modal__dialog" role="dialog" aria-modal="true" :aria-label="t('home.contactTitle')">
         <button type="button" class="modal__close" :aria-label="t('home.close')" @click="emit('close')">
           &times;
         </button>
@@ -47,83 +47,85 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
 </template>
 
 <style lang="scss" scoped>
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  z-index: 100;
-}
-
 .modal {
-  position: relative;
-  background: $color-card-bg;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: $radius-lg;
-  padding: 2.5rem;
-  max-width: 440px;
-  width: 100%;
-  color: white;
-}
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 100;
+  }
 
-.modal__close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: #818181;
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: $transition-base;
-
-  &:hover {
+  &__dialog {
+    position: relative;
+    background: $color-card-bg;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: $radius-lg;
+    padding: 2.5rem;
+    max-width: 440px;
+    width: 100%;
     color: white;
   }
-}
 
-.modal__title {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #818181;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: $transition-base;
 
-.modal__pitch {
-  color: #b0b0b0;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
+    &:hover {
+      color: white;
+    }
+  }
 
-.modal__details {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
+  &__title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
 
-.modal__row {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
+  &__pitch {
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
 
-.modal__label {
-  color: $color-primary;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+  &__details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
 
-.modal__value {
-  color: white;
-  font-size: 1.05rem;
-  text-decoration: none;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
 
-  &:hover {
-    text-decoration: underline;
+  &__label {
+    color: $color-primary;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__value {
+    color: white;
+    font-size: 1.05rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 </style>

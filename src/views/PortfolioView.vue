@@ -10,7 +10,7 @@ const { t } = useI18n();
   <main class="portfolio-page">
     <header class="portfolio-page__header">
       <h1 class="portfolio-page__title">
-        {{ t('portfolio.titleMain') }} <span class="portfolio-page__title--alt">{{ t('portfolio.titleAlt') }}</span>
+        {{ t('portfolio.titleMain') }} <span class="portfolio-page__title-alt">{{ t('portfolio.titleAlt') }}</span>
       </h1>
       <p class="portfolio-page__description">{{ t('portfolio.description') }}</p>
     </header>
@@ -43,7 +43,10 @@ const { t } = useI18n();
 
   &__title {
     font-size: 3.5rem;
-    &--alt { color: $color-primary; }
+  }
+
+  &__title-alt {
+    color: $color-primary;
   }
 
   &__description {

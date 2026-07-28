@@ -254,7 +254,7 @@ function toggleTbr(bookId) {
             <div v-else-if="activeCategory === 'ebook'" class="fl__ebook-grid">
               <div v-for="book in books" :key="book.id" class="fl__ebook-card" @click="openBook(book)">
                 <div class="fl__ebook-cover" :style="coverStyle(book)">
-                  <div class="fl__book-cover-title">{{ book.title }}</div>
+                  <div class="fl__book-cover-title fl__book-cover-title--sm">{{ book.title }}</div>
                 </div>
                 <div class="fl__ebook-badge">Instant download</div>
                 <div class="fl__ebook-title">{{ book.title }}</div>
@@ -508,6 +508,8 @@ function toggleTbr(bookId) {
 
   &__book-cover-title {
     color: rgba(255, 255, 255, 0.92); font-size: 13px; font-weight: 700; line-height: 1.3;
+
+    &--sm { font-size: 11px; }
   }
 
   &__book-genre {
@@ -581,8 +583,6 @@ function toggleTbr(bookId) {
   &__ebook-cover {
     height: 110px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end;
     padding: 8px; box-sizing: border-box;
-
-    .fl__book-cover-title { font-size: 11px; }
   }
 
   &__ebook-badge {
