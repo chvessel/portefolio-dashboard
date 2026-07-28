@@ -19,7 +19,7 @@ const isContactModalOpen = ref(false);
 </script>
 
 <template>
-  <main class="portfolio">
+  <main class="portefolio">
 
     <section class="hero">
       <div class="hero__container">
@@ -43,8 +43,8 @@ const isContactModalOpen = ref(false);
       </div>
     </section>
 
-    <section class="portfolio__main">
-      <div class="portfolio__container">
+    <section class="portefolio__main">
+      <div class="portefolio__container">
 
         <div class="projects">
           <h3 class="projects__title">{{ t('home.featuredTitle') }}</h3>
@@ -89,7 +89,7 @@ const isContactModalOpen = ref(false);
 </template>
 
 <style lang="scss" scoped>
-.portfolio {
+.portefolio {
   background-color: $color-bg;
   min-height: 70vh;
   color: white;
@@ -237,7 +237,7 @@ const isContactModalOpen = ref(false);
     flex-direction: column;
   }
 
-  .portfolio__container,
+  .portefolio__container,
   .hero {
     padding: 0;
   }

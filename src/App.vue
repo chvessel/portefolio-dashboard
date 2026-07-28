@@ -17,7 +17,7 @@ const router = useRouter()
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item"><RouterLink to="/" class="nav__link">{{ t('nav.home') }}</RouterLink></li>
-          <li class="nav__item"><RouterLink to="/portefolio" class="nav__link">{{ t('nav.portfolio') }}</RouterLink></li>
+          <li class="nav__item"><RouterLink to="/portefolio" class="nav__link">{{ t('nav.portefolio') }}</RouterLink></li>
         </ul>
         <LanguageSwitch />
       </nav>

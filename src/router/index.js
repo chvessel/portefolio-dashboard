@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PortfolioView from '@/views/PortfolioView.vue'
+import PortefolioView from '@/views/PortefolioView.vue'
 import ConversionView from '@/views/ConversionView.vue'
 import GhostView from '@/views/GhostView.vue'
 import MediaDeckView from '@/views/MediaDeckView.vue'
@@ -18,8 +18,8 @@ const router = createRouter({
     },
     {
       path: '/portefolio',
-      name: 'portfolio',
-      component: PortfolioView,
+      name: 'portefolio',
+      component: PortefolioView,
     },
     {
       path: '/portefolio/conversion',
