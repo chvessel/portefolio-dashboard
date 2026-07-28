@@ -17,7 +17,7 @@ const router = useRouter()
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item"><RouterLink to="/" class="nav__link">{{ t('nav.home') }}</RouterLink></li>
-          <li class="nav__item"><RouterLink to="/portfolio" class="nav__link">{{ t('nav.portfolio') }}</RouterLink></li>
+          <li class="nav__item"><RouterLink to="/portefolio" class="nav__link">{{ t('nav.portfolio') }}</RouterLink></li>
         </ul>
         <LanguageSwitch />
       </nav>
@@ -82,28 +82,27 @@ body {
 }
 
 .back-bar {
-  padding: 0 5rem;
+  padding: 0 4rem;
   margin-bottom: 1.5rem;
 
   &__btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(184, 134, 11, 0.1);
+    border: 1px solid rgba(184, 134, 11, 0.4);
     border-radius: 999px;
     cursor: pointer;
-    color: rgb(150, 150, 150);
+    color: $color-white;
     font-family: sans-serif;
     font-size: 0.9rem;
-    font-weight: 600;
-    padding: 0.5rem 1.15rem;
+    font-weight: 700;
+    padding: 0.55rem 1.25rem;
     transition: $transition-base;
 
     &:hover {
-      color: $color-white;
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(184, 134, 11, 0.2);
+      border-color: $color-primary;
 
       .back-bar__arrow {
         transform: translateX(-3px);
@@ -113,6 +112,7 @@ body {
 
   &__arrow {
     font-size: 1rem;
+    color: $color-primary;
     transition: transform 0.2s ease;
   }
 }
