@@ -172,13 +172,10 @@ const alerts = computed(() =>
               <span>Live</span>
             </div>
             <div class="dn__topbar-actions">
-              <div class="dn__topbar-btn"></div>
-              <div class="dn__topbar-btn"></div>
-              <div class="dn__topbar-btn"></div>
               <div class="dn__avatar"></div>
               <div>
-                <div class="dn__user-name">John Abraham</div>
-                <div class="dn__user-email">uirahamat098@gmail.com</div>
+                <div class="dn__user-name">Mike Dawson</div>
+                <div class="dn__user-email">mike.d098@email.com</div>
               </div>
             </div>
           </div>
@@ -319,7 +316,7 @@ const alerts = computed(() =>
 .dn {
   min-height: 760px;
   display: flex;
-  background: #141221;
+  background: linear-gradient(160deg, #050505 0%, #1c1c1c 100%);
   font-family: 'Inter', system-ui, sans-serif;
   overflow: hidden;
   color: #d6d4dd;
@@ -590,7 +587,7 @@ const alerts = computed(() =>
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7c5cff, #f472b6);
+    background: linear-gradient(135deg, #7c5cff, #091cb3);
   }
 
   &__user-name {

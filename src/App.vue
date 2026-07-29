@@ -83,7 +83,7 @@ body {
 
 .back-bar {
   padding: 0 4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 
   &__btn {
     display: inline-flex;
@@ -117,18 +117,33 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
+  .header__row {
+    padding: 0 2.5rem;
+  }
+  .back-bar {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
   .header__row {
     flex-direction: column;
     gap: 1rem;
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
   .nav {
     padding: 0;
-    gap: 1.5rem;
+    gap: 1rem;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+
+    &__list {
+      gap: 1.75rem;
+    }
   }
   .back-bar {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 }
 </style>

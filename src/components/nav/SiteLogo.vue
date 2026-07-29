@@ -28,7 +28,7 @@ const { t } = useI18n();
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-mobile) {
   .logo__mark {
     width: 4.5rem;
     height: 4.5rem;

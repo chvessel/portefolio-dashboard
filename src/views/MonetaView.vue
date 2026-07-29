@@ -262,7 +262,7 @@ const statusStyle = (status) => {
 .ldg {
   min-height: 760px;
   display: flex;
-  background: #101210;
+  background: linear-gradient(160deg, #050505 0%, #1c1c1c 100%);
   font-family: 'Inter', system-ui, sans-serif;
   overflow: hidden;
   color: #d8ddd6;

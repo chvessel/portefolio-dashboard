@@ -199,7 +199,7 @@ const responseModes = [
 .cx {
   min-height: 760px;
   display: flex;
-  background: #0f1715;
+  background: linear-gradient(160deg, #050505 0%, #1c1c1c 100%);
   font-family: 'Inter', system-ui, sans-serif;
   overflow: hidden;
   color: #d6e0de;

@@ -38,7 +38,7 @@ defineProps({
 <style lang="scss" scoped>
 .project-hero {
   min-height: 100vh;
-  padding: 72px 5vw 96px;
+  padding: 2.4rem 4rem 4.8rem;
   box-sizing: border-box;
   background: $color-bg;
   font-family: 'Inter', system-ui, sans-serif;
@@ -128,6 +128,26 @@ defineProps({
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: auto;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .project-hero {
+    padding: 2rem 2.5rem 4rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .project-hero {
+    padding: 1.75rem 1.25rem 3rem;
+  }
+
+  .project-hero__title {
+    font-size: 30px;
+  }
+
+  .project-hero__description {
+    font-size: 14.5px;
   }
 }
 </style>

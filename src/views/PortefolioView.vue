@@ -33,16 +33,16 @@ const { t } = useI18n();
 <style lang="scss" scoped>
 .portfolio-page {
   background-color: #0d0d0d;
-  padding: 4rem;
+  padding: 2rem 4rem 4rem;
   color: white;
 
   &__header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   &__title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
   }
 
   &__title-alt {
@@ -56,10 +56,35 @@ const { t } = useI18n();
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1600px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .portfolio-page {
+    padding: 1.75rem 2.5rem 3rem;
+
+    &__header {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .portfolio-page {
+    padding: 1.5rem 1.25rem 2.5rem;
+
+    &__header {
+      margin-bottom: 2rem;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
   }
 }
 </style>

@@ -68,6 +68,10 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
     max-width: 440px;
     width: 100%;
     color: white;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1.75rem;
+    }
   }
 
   &__close {

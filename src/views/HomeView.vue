@@ -230,20 +230,41 @@ const isContactModalOpen = ref(false);
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $breakpoint-tablet) {
   .hero__container,
-  .portfolio__container,
+  .portefolio__container,
   .projects__grid {
     flex-direction: column;
   }
 
-  .portefolio__container,
   .hero {
-    padding: 0;
+    padding: 1.5rem 2.5rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .portefolio__container {
+    padding: 0 2.5rem 4rem;
+    gap: 3rem;
   }
 
   .hero__figure {
-    margin: 0;
+    margin: 2rem 0 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .hero {
+    padding: 1.25rem 1.25rem 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .portefolio__container {
+    padding: 0 1.25rem 3rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
   }
 }
 </style>
