@@ -39,37 +39,43 @@
   },
   "projects": {
     "conversion": {
-      "title": "Conversion — Real-Time Marketing Dashboard",
+      "title": "Conversion",
+      "titleSub": "Your real-time marketing dashboard",
       "description": "A live dashboard for marketing teams — tracks traffic and conversions in real time, compares how campaigns are doing across channels, and flags invalid traffic and VPN proxies before they mess with your numbers.",
       "considerations": "The whole point is watching numbers move live, so I kept the layout calm instead of cramming everything in — stat cards and charts up top for the quick glance, campaign and conversion detail tucked one click away so it's not all screaming for attention at once.",
       "problem": "Marketing teams usually have their data scattered across five different tools, so by the time someone spots a campaign quietly bleeding budget to bot traffic, the money's already gone. This pulls everything into one live view so you catch it same-day instead of at the end of the month."
     },
     "moneta": {
-      "title": "Moneta — Modular Financial Dashboard",
+      "title": "Moneta",
+      "titleSub": "Your modular financial dashboard",
       "description": "A financial dashboard built around swappable modules, so a construction firm, a retail shop, a freelancer and an agency can all set it up around the numbers that actually matter to them — bills and jobs for one, orders and stock for another.",
       "considerations": "Biggest challenge was fitting a lot of numbers on one screen without it turning into a wall of digits, so I leaned on progress rings and charts instead of tables wherever the trend mattered more than the exact figure. And since it's built as swappable modules instead of one fixed layout, the same components had to hold up whether they're showing bills or orders.",
       "problem": "Most finance tools are built for one kind of business, so a construction company and a retail shop both end up wrestling with the same rigid spreadsheet columns that don't really fit either of them. This swaps in the right module for your industry instead of making everyone use the same template."
     },
     "ghost": {
-      "title": "Ghost — Smart Workspace Assistant",
+      "title": "Ghost",
+      "titleSub": "Your AI assistant made for you and your life",
       "description": "A smart assistant baked into the workspace — you ask it stuff in plain language and it gives you answers, support replies, or handles small tasks, without you having to dig through five menus first.",
       "considerations": "Spent a lot of time on the loading and typing states, honestly — nothing kills trust in a tool faster than a response that takes a second too long and just looks frozen instead of working on it.",
       "problem": "Support and ops folks waste a stupid amount of time hunting through old threads and docs to answer questions they've basically already answered ten times. This keeps the answers, templates, and history in one place so people can actually get through their inbox instead of re-Googling their own product."
     },
     "mediadeck": {
-      "title": "MediaDeck — Subscription Overview",
+      "title": "MediaDeck",
+      "titleSub": "Your subscription overview",
       "description": "Rounds up every subscription you're paying for — streaming, audiobooks, e-books, music, productivity tools, all of it — into one overview, so you can actually see what you're using versus what's just quietly charging your card.",
       "considerations": "Hardest part was making subscriptions you never think about feel worth checking in on, so I grouped everything by category and kept it to simple cost-vs-usage comparisons instead of dumping raw historical data on people.",
       "problem": "It's way too easy to lose track of what you're actually paying for once your subscriptions are spread across a dozen apps and buried in email receipts. This rounds it all up in one spot so you can actually decide what's worth keeping."
     },
     "spine": {
-      "title": "Spine — Book Store (Print, Audio & E-books)",
+      "title": "Spine",
+      "titleSub": "Your digital book universe (shop in one format)",
       "description": "An online bookstore where you browse and buy physical books, audiobooks, and e-books off the same shelf, with a different preview and checkout flow depending on which format you actually want.",
       "considerations": "Physical, audio and digital books each want a different kind of product page — a sample chapter, an audio preview, a shipping estimate — so I designed it to actually adapt per format instead of jamming everything into one generic template and hoping it fits.",
       "problem": "Buying books online usually means picking one format and sticking with it, even though most people actually want to mix it up — read on the couch, listen on a run, finish it on a tablet on the train. This treats a book as one product with three formats instead of three separate purchases you have to hunt down separately."
     },
     "dayframe": {
-      "title": "Dayframe — Personal Dashboard",
+      "title": "Dayframe",
+      "titleSub": "Your personal dashboard",
       "description": "A personal dashboard for keeping tabs on daily habits, goals and schedule in one place — the kind of small stuff that's easy to lose track of when it's scattered across five different apps.",
       "considerations": "Since it's built for one person instead of a team, I went for quick daily glances and a bit of personality over dense reporting — nobody wants a spreadsheet-looking thing for their own morning routine.",
       "problem": "Personal productivity apps tend to split your day across five different apps — one for tasks, one for habits, one for notes — so you end up context-switching all day just to check in on yourself. This puts the small stuff on one screen instead."

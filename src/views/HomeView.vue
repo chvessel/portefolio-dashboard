@@ -53,6 +53,7 @@ const isContactModalOpen = ref(false);
               v-for="project in featuredProjects"
               :key="project.id"
               :title="t(`projects.${project.id}.title`)"
+              :title-sub="t(`projects.${project.id}.titleSub`)"
               :description="t(`projects.${project.id}.description`)"
               :image="project.image"
               :link="project.link"

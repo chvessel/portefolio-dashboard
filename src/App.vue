@@ -24,9 +24,9 @@ const router = useRouter()
     </div>
   </header>
 
-  <div v-if="route.path !== '/'" class="back-bar">
+  <div v-if="route.path !== '/'" class="back-bar" :class="{ 'back-bar--lg': route.name === 'portefolio' }">
     <button type="button" class="back-bar__btn" @click="router.back()">
-      <span class="back-bar__arrow">←</span>{{ t('nav.back') }}
+      {{ t('nav.back') }}
     </button>
   </div>
 
@@ -47,7 +47,7 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #0d0d0d;
   margin: 0;
 }
 
@@ -82,8 +82,8 @@ body {
 }
 
 .back-bar {
-  padding: 0 4rem;
-  margin-bottom: 0.75rem;
+  padding: 5rem 0 0 14rem;
+  margin-bottom: -4.75rem;
 
   &__btn {
     display: inline-flex;
@@ -104,17 +104,16 @@ body {
       background: rgba(184, 134, 11, 0.2);
       border-color: $color-primary;
 
-      .back-bar__arrow {
-        transform: translateX(-3px);
-      }
     }
   }
 
-  &__arrow {
-    font-size: 1rem;
-    color: $color-primary;
-    transition: transform 0.2s ease;
+  &--lg {
+    .back-bar__btn {
+      font-size: 1.15rem;
+      padding: 0.75rem 1.6rem;
+    }
   }
+
 }
 
 @media (max-width: $breakpoint-tablet) {

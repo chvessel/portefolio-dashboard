@@ -7,6 +7,7 @@ const { t } = useI18n();
 defineProps({
   image: String,
   title: String,
+  titleSub: String,
   description: String,
   link: String,
   technologies: {
@@ -25,7 +26,8 @@ defineProps({
     </div>
 
     <div class="card__content">
-      <h4 class="card__title">{{ title }}</h4>
+      <h3 class="card__title">{{ title }}</h3>
+      <h4 class="card__title-sub">{{ titleSub }}</h4>
       <p class="card__description">{{ description }}</p>
 
       <ul v-if="technologies.length" class="card__tech">
@@ -92,6 +94,13 @@ defineProps({
 
   &__title {
     color: white;
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title-sub {
+    color: $color-text-muted;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
@@ -124,8 +133,8 @@ defineProps({
 
   &__considerations {
     color: #a8a8a8;
-    font-size: 0.78rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
     font-style: italic;
     margin-bottom: 1.5rem;
   }
@@ -134,6 +143,7 @@ defineProps({
     color: $color-primary;
     font-style: normal;
     font-weight: 600;
+    font-size: 1rem;
   }
 
   &__footer {

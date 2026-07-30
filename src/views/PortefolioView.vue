@@ -20,6 +20,7 @@ const { t } = useI18n();
         v-for="project in projects"
         :key="project.id"
         :title="t(`projects.${project.id}.title`)"
+        :title-sub="t(`projects.${project.id}.titleSub`)"
         :description="t(`projects.${project.id}.description`)"
         :considerations="t(`projects.${project.id}.considerations`)"
         :technologies="project.technologies"
@@ -56,10 +57,8 @@ const { t } = useI18n();
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1600px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 42px;
   }
 }
 
@@ -69,6 +68,11 @@ const { t } = useI18n();
 
     &__header {
       margin-bottom: 2.5rem;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
     }
   }
 }

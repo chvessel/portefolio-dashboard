@@ -44,8 +44,7 @@ defineProps({
   font-family: 'Inter', system-ui, sans-serif;
 
   &__header {
-    max-width: 1400px;
-    margin: 0 auto 44px;
+    margin: 0 0 44px;
   }
 
   &__eyebrow {
@@ -125,8 +124,6 @@ defineProps({
   &__window-wrap {
     display: flex;
     justify-content: flex-start;
-    max-width: 1400px;
-    margin: 0 auto;
     overflow-x: auto;
   }
 }
